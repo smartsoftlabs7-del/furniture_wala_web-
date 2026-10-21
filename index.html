@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furniture Wala | Ultra-Luxury Direct Factory Digital Showroom Karachi</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Google Fonts: Cinzel + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoalDeep: '#0D0C0B',
+            charcoalMain: '#141311',
+            charcoalCard: '#1C1A18',
+            charcoalElevated: '#252320',
+            brandGold: '#D4AF37',
+            brandGoldLight: '#F3DE8A',
+            brandGoldDark: '#9E7D1B',
+            brandBorder: '#2C2925',
+            brandMuted: '#9E9890',
+          },
+          fontFamily: {
+            heading: ['Cinzel', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       CORE RESET & LUXURY DARK CHARCOAL + GOLD THEME STYLES
+       ========================================================================== */
+    html {
+      scroll-behavior: smooth;
+      background-color: #0D0C0B;
+      color: #F5F2EB;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #0D0C0B;
+    }
+
+    /* Hide native cursor on fine pointer devices when custom cursor is active */
+    @media (pointer: fine) {
+      body, a, button, select, input, label, [role="button"], .cursor-interactive {
+        cursor: none !important;
+      }
+    }
+
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Custom Scrollbar for Luxury Feel */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0D0C0B; }
+    ::-webkit-scrollbar-thumb { background: #2C2925; border-radius: 4px; border: 1px solid rgba(212, 175, 55, 0.2); }
+    ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+    /* Metallic Gold Gradients */
+    .gold-gradient {
+      background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 35%, #D4AF37 65%, #AA771C 100%);
+    }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #D4AF37 0%, #FFF3B0 50%, #C59B27 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border-glow {
+      box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+    }
+
+    /* ==========================================================================
+       1. PRE-LOADER OVERLAY & MAGNETIC CUSTOM LUXURY CURSOR
+       ========================================================================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: radial-gradient(circle at center, #181614 0%, #090807 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.85s cubic-bezier(0.65, 0, 0.35, 1), visibility 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+      will-change: opacity, visibility;
+    }
+    #preloader.loaded {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .preloader-logo-box {
+      position: relative;
+      width: 112px;
+      height: 112px;
+      border: 2px solid rgba(212, 175, 55, 0.65);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      padding: 6px;
+      box-shadow: 0 0 45px rgba(212, 175, 55, 0.35);
+      animation: logoPulse 2s infinite ease-in-out;
+    }
+    .preloader-line-track {
+      width: 240px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+      margin-top: 24px;
+    }
+    .preloader-line-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #9E7D1B, #F3DE8A, #D4AF37);
+      box-shadow: 0 0 12px #D4AF37;
+      transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes logoPulse {
+      0%, 100% { transform: scale(1); border-color: rgba(212, 175, 55, 0.35); }
+      50% { transform: scale(1.05); border-color: rgba(243, 222, 138, 0.85); box-shadow: 0 0 50px rgba(212, 175, 55, 0.4); }
+    }
+
+    /* Custom Magnetic Cursor Dot + Glowing Trailing Ring */
+    #cursor-dot,
+    #cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 100000;
+      border-radius: 50%;
+      will-change: transform, width, height, margin;
+      display: none;
+    }
+    @media (pointer: fine) {
+      #cursor-dot,
+      #cursor-ring {
+        display: block;
+      }
+    }
+    #cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #F3DE8A;
+      box-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37;
+      margin-left: -4px;
+      margin-top: -4px;
+      transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, background-color 0.25s ease;
+    }
+    #cursor-ring {
+      width: 38px;
+      height: 38px;
+      margin-left: -19px;
+      margin-top: -19px;
+      border: 1.5px solid rgba(212, 175, 55, 0.65);
+      background-color: rgba(212, 175, 55, 0.03);
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.22);
+      transition: width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  margin 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  background-color 0.32s ease,
+                  border-color 0.32s ease,
+                  box-shadow 0.32s ease;
+    }
+    body.cursor-hover #cursor-dot {
+      width: 11px;
+      height: 11px;
+      margin-left: -5.5px;
+      margin-top: -5.5px;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 16px #F3DE8A;
+    }
+    body.cursor-hover #cursor-ring {
+      width: 64px;
+      height: 64px;
+      margin-left: -32px;
+      margin-top: -32px;
+      border-color: rgba(243, 222, 138, 0.95);
+      background-color: rgba(212, 175, 55, 0.14);
+      box-shadow: 0 0 32px rgba(212, 175, 55, 0.45), inset 0 0 12px rgba(212, 175, 55, 0.2);
+    }
+
+    /* ==========================================================================
+       2. HERO SLIDER WITH CLIP-PATH CURTAIN REVEAL & SPLIT-TEXT REVEAL
+       ========================================================================== */
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+      transition: clip-path 1.25s cubic-bezier(0.77, 0, 0.175, 1);
+      will-change: clip-path;
+    }
+    .hero-slide.prev-slide {
+      z-index: 5;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      transition: none;
+    }
+    .hero-slide.active {
+      z-index: 10;
+      pointer-events: auto;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    /* Continuous Slow Parallax Zoom Background */
+    .hero-parallax-layer {
+      position: absolute;
+      inset: -10%;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+    .hero-bg-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.32) contrast(1.1);
+      transform: scale(1.15) translate3d(2%, 0, 0);
+      transition: transform 9.5s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    body.ui-ready .hero-slide.active .hero-bg-image {
+      transform: scale(1.02) translate3d(-1.5%, -1%, 0);
+    }
+
+    /* Split-Text Word & Character Baseline Reveal */
+    .split-word-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      padding-bottom: 0.08em;
+      margin-right: 0.26em;
+    }
+    .split-word-inner {
+      display: inline-block;
+      transform: translate3d(0, 115%, 0) rotateZ(2deg);
+      opacity: 0;
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.65s ease;
+      will-change: transform, opacity;
+    }
+    body.ui-ready .hero-slide.active .split-word-inner {
+      transform: translate3d(0, 0%, 0) rotateZ(0deg);
+      opacity: 1;
+    }
+    .split-gold-word .split-word-inner {
+      background: linear-gradient(135deg, #D4AF37 0%, #FFF3B0 50%, #C59B27 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Staggered Supporting Elements (Pill, Paragraph, CTAs) */
+    .hero-fade-up {
+      opacity: 0;
+      transform: translate3d(0, 32px, 0);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+    body.ui-ready .hero-slide.active .hero-fade-up {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    .hero-slide.active .delay-pill { transition-delay: 0.14s; }
+    .hero-slide.active .delay-desc { transition-delay: 0.62s; }
+    .hero-slide.active .delay-cta  { transition-delay: 0.76s; }
+
+    /* Minimalist Dot Indicators Fixed at Bottom-Center */
+    .hero-minimal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background-color: rgba(255, 255, 255, 0.28);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .hero-minimal-dot:hover {
+      background-color: rgba(243, 222, 138, 0.65);
+      transform: scale(1.2);
+    }
+    .hero-minimal-dot.active {
+      width: 34px;
+      background: linear-gradient(90deg, #BF953F, #FCF6BA, #D4AF37);
+      border-color: #F3DE8A;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.75);
+    }
+
+    /* ==========================================================================
+       3. GLASSMORPHISM STICKY NAVBAR
+       ========================================================================== */
+    #mainNavbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: transparent;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+      transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.4s ease,
+                  box-shadow 0.4s ease,
+                  padding 0.35s ease;
+    }
+    #mainNavbar.navbar-scrolled {
+      background: rgba(13, 12, 11, 0.82);
+      backdrop-filter: blur(20px) saturate(170%);
+      -webkit-backdrop-filter: blur(20px) saturate(170%);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.75);
+    }
+
+    /* ==========================================================================
+       4. BUG-FREE RESPONSIVE CATALOG TABS (FLEX-WRAP + 2D MORPHING PILL)
+       ========================================================================== */
+    #categoryTabsContainer {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      max-width: 100%;
+    }
+    #activeTabPill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 0.75rem;
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                  width 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                  height 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform, width, height;
+    }
+
+    /* ==========================================================================
+       5. ISOTOPE GRID, 3D TILT CARDS, FLUID IMAGE HOVER & ANIMATED BADGES
+       ========================================================================== */
+    .catalog-item {
+      will-change: transform, opacity;
+      transform-origin: center center;
+      transition: opacity 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.44s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .catalog-item.isotope-hiding {
+      opacity: 0 !important;
+      transform: scale3d(0.75, 0.75, 1) translate3d(0, 20px, 0) !important;
+      pointer-events: none;
+    }
+    .catalog-item.isotope-hidden {
+      display: none !important;
+    }
+    .catalog-item.isotope-entering {
+      opacity: 0;
+      transform: scale3d(0.8, 0.8, 1) translate3d(0, 24px, 0);
+    }
+
+    .tilt-card-wrapper {
+      perspective: 1100px;
+    }
+    .tilt-card {
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.18s cubic-bezier(0.03, 0.98, 0.52, 0.99),
+                  border-color 0.35s ease,
+                  box-shadow 0.35s ease;
+      background: linear-gradient(160deg, #1C1A17 0%, #12110F 100%);
+      border: 1px solid #2C2925;
+    }
+    .tilt-card:hover {
+      border-color: rgba(212, 175, 55, 0.58);
+      box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.85), 0 0 28px -8px rgba(212, 175, 55, 0.25);
+    }
+    .tilt-glare {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: radial-gradient(circle at 50% 50%, rgba(243, 222, 138, 0.16), transparent 65%);
+      border-radius: 1rem;
+    }
+    .tilt-card:hover .tilt-glare {
+      opacity: 1;
+    }
+
+    /* Fluid / Liquid Scale Image Hover Effect (SVG Displacement + Organic Scale) */
+    .fluid-product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale3d(1, 1, 1);
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, filter;
+    }
+    .tilt-card:hover .fluid-product-img {
+      transform: scale3d(1.11, 1.11, 1) rotate(-0.6deg);
+      filter: url(#liquidHoverFilter) contrast(1.05) brightness(1.05);
+    }
+
+    /* Slide-Up Action Bar inside Card */
+    .card-action-drawer {
+      transform: translate3d(0, 105%, 0);
+      opacity: 0;
+      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.32s ease;
+      will-change: transform, opacity;
+    }
+    .tilt-card:hover .card-action-drawer,
+    .tilt-card:focus-within .card-action-drawer {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    @media (hover: none) {
+      .card-action-drawer {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+      }
+    }
+
+    /* Animated Gently Pulsing Luxury Badges ("New Arrival", "Best Seller", etc.) */
+    .luxury-pulse-badge {
+      animation: badgeSoftPulse 2.4s ease-in-out infinite;
+      will-change: transform, box-shadow;
+    }
+    @keyframes badgeSoftPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.55);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 16px 3px rgba(212, 175, 55, 0.38);
+      }
+    }
+
+    /* ==========================================================================
+       7. PULSING MAGNETIC FLOATING WHATSAPP BUTTON
+       ========================================================================== */
+    .whatsapp-pulse-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      will-change: transform;
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .whatsapp-pulse-ring,
+    .whatsapp-pulse-ring-delay {
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.45) 0%, rgba(212, 175, 55, 0.35) 100%);
+      border: 1.5px solid rgba(212, 175, 55, 0.6);
+      z-index: -1;
+      pointer-events: none;
+      animation: luxuryPulseWave 2.6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+    }
+    .whatsapp-pulse-ring-delay {
+      animation-delay: 1.3s;
+    }
+    @keyframes luxuryPulseWave {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.85;
+      }
+      75% {
+        transform: scale(1.38);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.42);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body class="bg-charcoalDeep text-stone-100 font-sans antialiased selection:bg-brandGold selection:text-charcoalDeep">
+
+  <!-- Hidden SVG Filter for Fluid/Liquid Product Image Hover Distortion -->
+  <svg class="hidden" width="0" height="0" aria-hidden="true">
+    <defs>
+      <filter id="liquidHoverFilter" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence id="liquidTurbulence" type="fractalNoise" baseFrequency="0.015 0.015" numOctaves="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ========================================================= -->
+  <!-- 1. LUXURY FULL-SCREEN PRE-LOADER & MAGNETIC CURSOR        -->
+  <!-- ========================================================= -->
+  <div id="preloader" role="status" aria-label="Loading Furniture Wala Digital Showroom">
+    <div class="preloader-logo-box overflow-hidden">
+      <img src="assets/logo.png" alt="Furniture Wala Official Logo" class="w-full h-full object-contain rounded-full" />
+    </div>
+    <div class="mt-5 text-center">
+      <p class="font-heading text-sm sm:text-base tracking-[0.3em] text-stone-200 uppercase font-bold">
+        FURNITURE <span class="text-brandGold">WALA</span>
+      </p>
+      <p class="text-[11px] uppercase tracking-[0.2em] text-brandMuted mt-1">
+        www.furniturewala.pk • Direct Factory Showroom
+      </p>
+    </div>
+    <div class="preloader-line-track">
+      <div id="preloaderBar" class="preloader-line-fill"></div>
+    </div>
+  </div>
+
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ========================================================= -->
+  <!-- TOP ANNOUNCEMENT BAR (Direct Factory & Location Proof)    -->
+  <!-- ========================================================= -->
+  <div class="bg-charcoalMain text-brandGoldLight text-xs py-2.5 px-4 border-b border-brandGold/20 font-medium relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 text-center sm:text-left">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-brandGold animate-ping"></span>
+        <span class="inline-block w-2 h-2 rounded-full bg-brandGold -ml-2"></span>
+        <span class="text-stone-300"><strong class="text-brandGoldLight">Direct Karkhana Rate:</strong> Solid Sheesham & Keekar Wood • Opp. Farooqia Masjid, Manzoor Colony, Karachi</span>
+      </div>
+      <div class="flex items-center space-x-4 text-[11px] text-stone-400">
+        <span class="hover:text-brandGoldLight transition cursor-interactive"><i class="fa-solid fa-clock mr-1 text-brandGold"></i> Mon - Sun: 11 AM - 10 PM</span>
+        <a href="tel:+923040802848" class="text-brandGold hover:text-brandGoldLight hover:underline font-bold transition"><i class="fa-solid fa-phone mr-1"></i> +92 304 0802848</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- 3. GLASSMORPHISM STICKY NAVBAR & LIVE SEARCH              -->
+  <!-- ========================================================= -->
+  <header id="mainNavbar" class="py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center space-x-3 group" data-magnetic>
+        <div class="w-12 h-12 rounded-full bg-white p-1 flex items-center justify-center shadow-lg border-2 border-brandGold/70 group-hover:border-brandGold group-hover:scale-105 transition overflow-hidden">
+          <img src="assets/logo.png" alt="Furniture Wala Logo" class="w-full h-full object-contain rounded-full" />
+        </div>
+        <div>
+          <span class="font-heading text-lg sm:text-xl font-extrabold tracking-widest text-white block leading-none">
+            FURNITURE <span class="gold-text-gradient">WALA</span>
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.18em] text-brandMuted font-semibold block mt-1">www.furniturewala.pk • Karachi</span>
+        </div>
+      </a>
+
+      <!-- Live Search Bar -->
+      <div class="order-3 sm:order-2 w-full sm:w-80 lg:w-96 relative">
+        <input 
+          type="text" 
+          id="catalogSearchInput" 
+          oninput="handleSearch(this.value)"
+          placeholder="Search Beds, Trundle, Leaf Dining, Bookshelf, TV Console..." 
+          class="w-full text-xs bg-charcoalCard/90 border border-brandBorder rounded-full py-2.5 pl-10 pr-8 text-stone-100 placeholder-brandMuted focus:outline-none focus:border-brandGold focus:ring-1 focus:ring-brandGold/40 transition"
+        />
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-xs text-brandGold"></i>
+        <button onclick="clearSearch()" id="clearSearchBtn" class="hidden absolute right-3 top-2.5 text-xs text-brandMuted hover:text-brandGold">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Quick Actions (Shortlist / Cart Drawer Button + Direct WhatsApp Desk) -->
+      <div class="order-2 sm:order-3 flex items-center space-x-2.5">
+        <button onclick="toggleShortlistModal(true)" data-magnetic class="relative bg-charcoalCard border border-brandGold/30 hover:border-brandGold text-stone-100 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center transition gold-border-glow">
+          <i class="fa-solid fa-bag-shopping text-brandGold mr-2 text-sm"></i>
+          <span>Shortlist & Cart</span>
+          <span id="shortlistBadgeCount" class="ml-2 gold-gradient text-charcoalDeep text-[10px] font-extrabold px-2 py-0.5 rounded-full">0</span>
+        </button>
+
+        <a href="https://wa.me/923040802848?text=Assalam-o-Alaikum%20Furniture%20Wala!%20Mujhe%20designs%20aur%20factory%20rates%20chahiye." target="_blank" data-magnetic class="bg-emerald-600/90 hover:bg-emerald-500 border border-emerald-400/30 text-white px-4 py-2.5 rounded-xl text-xs font-bold flex items-center shadow-lg transition">
+          <i class="fa-brands fa-whatsapp text-sm mr-1.5"></i>
+          <span class="hidden md:inline">Order Desk</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- 2. HERO SLIDER WITH CLIP-PATH CURTAIN & SPLIT-TEXT REVEAL -->
+  <!-- ========================================================= -->
+  <section id="heroSliderSection" class="relative min-h-[86vh] flex items-center overflow-hidden border-b border-brandGold/20 select-none">
+    
+    <!-- SLIDE 1: Beds & Bedrooms Collection -->
+    <div class="hero-slide active" data-slide-index="0">
+      <div class="hero-parallax-layer">
+        <div class="hero-bg-image" style="background-image: url('assets/catalog/wooden-geometric-headboard-bed.png');"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-charcoalDeep via-charcoalDeep/85 to-charcoalDeep/45"></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full h-full flex items-center pt-16 pb-28 sm:py-28">
+        <div class="max-w-3xl">
+          <div class="hero-fade-up delay-pill inline-flex items-center space-x-2 bg-brandGold/15 border border-brandGold/40 px-4 py-1.5 rounded-full mb-5 backdrop-blur-md">
+            <i class="fa-solid fa-crown text-brandGold text-xs"></i>
+            <span class="text-brandGoldLight text-xs font-bold uppercase tracking-[0.2em]">2026 Luxury Bedroom Edition • Direct Karkhana</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight mb-5">
+            <span class="block" data-split-text>Save 35% Showroom Markup.</span>
+            <span class="block mt-1 split-gold-word" data-split-text data-split-offset="4">Bespoke Beds & Bedroom Suites.</span>
+          </h1>
+
+          <p class="hero-fade-up delay-desc text-stone-300 text-sm sm:text-base max-w-2xl font-light mb-9 leading-relaxed">
+            Geometric tufted headboards, pull-out trundle beds aur multi-drawer storage beds direct Manzoor Colony factory rate par <strong class="text-brandGoldLight font-semibold">Seasoned Sheesham</strong> aur <strong class="text-brandGoldLight font-semibold">Solid Keekar</strong> mein banwayein.
+          </p>
+
+          <div class="hero-fade-up delay-cta flex flex-wrap items-center gap-4">
+            <a href="#catalog" onclick="triggerCategoryFromHero('beds')" data-magnetic class="gold-gradient hover:brightness-110 text-charcoalDeep font-extrabold text-xs sm:text-sm px-7 py-4 rounded-xl shadow-xl transition flex items-center">
+              <i class="fa-solid fa-bed mr-2"></i> Explore Beds & Bedrooms
+            </a>
+            <a href="#calculator" data-magnetic class="bg-charcoalCard/85 hover:bg-charcoalElevated border border-brandGold/40 text-brandGoldLight font-semibold text-xs sm:text-sm px-7 py-4 rounded-xl backdrop-blur-md transition flex items-center">
+              <i class="fa-solid fa-calculator mr-2 text-brandGold"></i> Package Cost Calculator
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Dining & Tables Collection -->
+    <div class="hero-slide" data-slide-index="1">
+      <div class="hero-parallax-layer">
+        <div class="hero-bg-image" style="background-image: url('assets/catalog/leaf-cutout-dining-table.png');"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-charcoalDeep via-charcoalDeep/85 to-charcoalDeep/45"></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full h-full flex items-center pt-16 pb-28 sm:py-28">
+        <div class="max-w-3xl">
+          <div class="hero-fade-up delay-pill inline-flex items-center space-x-2 bg-brandGold/15 border border-brandGold/40 px-4 py-1.5 rounded-full mb-5 backdrop-blur-md">
+            <i class="fa-solid fa-utensils text-brandGold text-xs"></i>
+            <span class="text-brandGoldLight text-xs font-bold uppercase tracking-[0.2em]">Hand-Crafted Solid Sheesham Dining</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight mb-5">
+            <span class="block" data-split-text>Artisan Leaf-Cutout</span>
+            <span class="block mt-1 split-gold-word" data-split-text data-split-offset="3">6-Seater Dining & Coffee Tables.</span>
+          </h2>
+
+          <p class="hero-fade-up delay-desc text-stone-300 text-sm sm:text-base max-w-2xl font-light mb-9 leading-relaxed">
+            100% khalis seasoned Sheesham wood dining sets with CNC leaf-motif high-back chairs aur smart bookshelf coffee tables. Polish se pehle raw lakri workshop aakar check karein.
+          </p>
+
+          <div class="hero-fade-up delay-cta flex flex-wrap items-center gap-4">
+            <a href="#catalog" onclick="triggerCategoryFromHero('dining')" data-magnetic class="gold-gradient hover:brightness-110 text-charcoalDeep font-extrabold text-xs sm:text-sm px-7 py-4 rounded-xl shadow-xl transition flex items-center">
+              <i class="fa-solid fa-chair mr-2"></i> View Dining & Tables
+            </a>
+            <a href="https://wa.me/923040802848?text=Assalam-o-Alaikum%20Furniture%20Wala!%20Mujhe%20Leaf-Cutout%20Dining%20Table%20aur%20Coffee%20Tables%20ke%20factory%20rates%20chahiye." target="_blank" data-magnetic class="bg-charcoalCard/85 hover:bg-charcoalElevated border border-brandGold/40 text-brandGoldLight font-semibold text-xs sm:text-sm px-7 py-4 rounded-xl backdrop-blur-md transition flex items-center">
+              <i class="fa-brands fa-whatsapp mr-2 text-emerald-400"></i> Direct Karkhana Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Shelves & Storage Collection -->
+    <div class="hero-slide" data-slide-index="2">
+      <div class="hero-parallax-layer">
+        <div class="hero-bg-image" style="background-image: url('assets/catalog/tv-console-shelf.png');"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-charcoalDeep via-charcoalDeep/85 to-charcoalDeep/45"></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full h-full flex items-center pt-16 pb-28 sm:py-28">
+        <div class="max-w-3xl">
+          <div class="hero-fade-up delay-pill inline-flex items-center space-x-2 bg-brandGold/15 border border-brandGold/40 px-4 py-1.5 rounded-full mb-5 backdrop-blur-md">
+            <i class="fa-solid fa-layer-group text-brandGold text-xs"></i>
+            <span class="text-brandGoldLight text-xs font-bold uppercase tracking-[0.2em]">Architectural Wall Consoles & Bookcases</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight mb-5">
+            <span class="block" data-split-text>Floating Media Consoles &</span>
+            <span class="block mt-1 split-gold-word" data-split-text data-split-offset="4">Bespoke Shelves & Storage.</span>
+          </h2>
+
+          <p class="hero-fade-up delay-desc text-stone-300 text-sm sm:text-base max-w-2xl font-light mb-9 leading-relaxed">
+            Wall-mounted wooden TV consoles, glass-door library bookcases, geometric display cubes aur slatted wall shelving aapke room ke exact size ke mutabiq tayyar kiye jate hain.
+          </p>
+
+          <div class="hero-fade-up delay-cta flex flex-wrap items-center gap-4">
+            <a href="#catalog" onclick="triggerCategoryFromHero('storage')" data-magnetic class="gold-gradient hover:brightness-110 text-charcoalDeep font-extrabold text-xs sm:text-sm px-7 py-4 rounded-xl shadow-xl transition flex items-center">
+              <i class="fa-solid fa-tv mr-2"></i> Browse Shelves & Storage
+            </a>
+            <a href="#location" data-magnetic class="bg-charcoalCard/85 hover:bg-charcoalElevated border border-brandGold/40 text-brandGoldLight font-semibold text-xs sm:text-sm px-7 py-4 rounded-xl backdrop-blur-md transition flex items-center">
+              <i class="fa-solid fa-location-dot mr-2 text-brandGold"></i> Visit Manzoor Colony Factory
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtle Gold Grid Mesh Overlay -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px] z-10 pointer-events-none" aria-hidden="true"></div>
+
+    <!-- Minimalist Dot Indicators Fixed at Absolute Bottom-Center (Zero Overlap) -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-3 bg-charcoalDeep/70 border border-brandGold/25 backdrop-blur-md px-4 py-2 rounded-full shadow-xl" role="tablist" aria-label="Hero Slide Indicators">
+      <button onclick="goToHeroSlide(0)" aria-label="Slide 1" class="hero-minimal-dot active" data-magnetic></button>
+      <button onclick="goToHeroSlide(1)" aria-label="Slide 2" class="hero-minimal-dot" data-magnetic></button>
+      <button onclick="goToHeroSlide(2)" aria-label="Slide 3" class="hero-minimal-dot" data-magnetic></button>
+    </div>
+
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 6. ANIMATED SCROLL COUNTERS SECTION                       -->
+  <!-- ========================================================= -->
+  <section id="statsCounterSection" class="relative bg-charcoalMain border-b border-brandBorder py-12 px-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Counter 1: 10+ Years Warranty -->
+        <div class="bg-charcoalCard/90 border border-brandGold/25 rounded-2xl p-6 text-center relative overflow-hidden group hover:border-brandGold/60 transition">
+          <div class="text-3xl sm:text-4xl font-heading font-extrabold gold-text-gradient">
+            <span class="scroll-counter" data-target="10" data-suffix="+ Years">0+ Years</span>
+          </div>
+          <p class="text-xs font-bold text-stone-200 uppercase tracking-wider mt-2">Written Wood Warranty</p>
+          <p class="text-[11px] text-brandMuted mt-0.5">Seasoned Anti-Termite Guarantee</p>
+        </div>
+
+        <!-- Counter 2: 35% Off Showroom Markup -->
+        <div class="bg-charcoalCard/90 border border-brandGold/25 rounded-2xl p-6 text-center relative overflow-hidden group hover:border-brandGold/60 transition">
+          <div class="text-3xl sm:text-4xl font-heading font-extrabold gold-text-gradient">
+            <span class="scroll-counter" data-target="35" data-suffix="% Off">0% Off</span>
+          </div>
+          <p class="text-xs font-bold text-stone-200 uppercase tracking-wider mt-2">Direct Factory Savings</p>
+          <p class="text-[11px] text-brandMuted mt-0.5">Compared to DHA & Clifton Retail</p>
+        </div>
+
+        <!-- Counter 3: 1250+ Custom Sets Delivered -->
+        <div class="bg-charcoalCard/90 border border-brandGold/25 rounded-2xl p-6 text-center relative overflow-hidden group hover:border-brandGold/60 transition">
+          <div class="text-3xl sm:text-4xl font-heading font-extrabold gold-text-gradient">
+            <span class="scroll-counter" data-target="1250" data-suffix="+ Projects">0+ Projects</span>
+          </div>
+          <p class="text-xs font-bold text-stone-200 uppercase tracking-wider mt-2">Karachi Factory Deliveries</p>
+          <p class="text-[11px] text-brandMuted mt-0.5">Crafted in Manzoor Colony Karkhana</p>
+        </div>
+
+        <!-- Counter 4: 100% Solid Seasoned Timber -->
+        <div class="bg-charcoalCard/90 border border-brandGold/25 rounded-2xl p-6 text-center relative overflow-hidden group hover:border-brandGold/60 transition">
+          <div class="text-3xl sm:text-4xl font-heading font-extrabold gold-text-gradient">
+            <span class="scroll-counter" data-target="100" data-suffix="% Pure">0% Pure</span>
+          </div>
+          <p class="text-xs font-bold text-stone-200 uppercase tracking-wider mt-2">Sheesham & Keekar</p>
+          <p class="text-[11px] text-brandMuted mt-0.5">Inspect Unpolished Raw Frame Live</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 4 & 5. INTERACTIVE PRODUCT CATALOG SECTION                -->
+  <!--    - Responsive Filter Tabs (All, Beds & Bedrooms,        -->
+  <!--      Dining & Tables, Shelves & Storage)                  -->
+  <!--    - Isotope/FLIP Staggered Shuffle Grid                  -->
+  <!--    - 3D Tilt Cards + Fluid/Liquid Scale Image Hover       -->
+  <!--    - Gently Pulsing Animated Badges                       -->
+  <!-- ========================================================= -->
+  <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+    <!-- Header with Responsive Flex-Wrap Category Tabs -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+      <div>
+        <span class="text-xs font-bold text-brandGold uppercase tracking-[0.2em]">Live Interactive Showroom</span>
+        <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white mt-1">
+          Direct Factory <span class="gold-text-gradient">Product Catalog</span>
+        </h2>
+        <p class="text-xs text-brandMuted mt-1">Filter by category for fluid Isotope shuffle animations, or hover any piece for 3D perspective & liquid scale.</p>
+      </div>
+
+      <!-- Bug-Free Responsive Category Filter Tabs (flex-wrap + 2D morphing gold pill) -->
+      <div id="categoryTabsContainer" class="text-xs font-semibold" role="tablist" aria-label="Product Categories">
+        <div id="activeTabPill" class="gold-gradient shadow-lg" aria-hidden="true"></div>
+        <button data-cat="all" onclick="filterCategory('all', this)" class="cat-tab relative z-10 text-charcoalDeep font-extrabold px-4 py-2.5 rounded-xl border border-transparent transition-colors duration-300">
+          All (<span id="count-all">12</span>)
+        </button>
+        <button data-cat="beds" onclick="filterCategory('beds', this)" class="cat-tab relative z-10 text-stone-300 hover:text-brandGoldLight px-4 py-2.5 rounded-xl border border-brandBorder/80 transition-colors duration-300">
+          <i class="fa-solid fa-bed mr-1.5 text-[11px]"></i>Beds & Bedrooms (4)
+        </button>
+        <button data-cat="dining" onclick="filterCategory('dining', this)" class="cat-tab relative z-10 text-stone-300 hover:text-brandGoldLight px-4 py-2.5 rounded-xl border border-brandBorder/80 transition-colors duration-300">
+          <i class="fa-solid fa-utensils mr-1.5 text-[11px]"></i>Dining & Tables (2)
+        </button>
+        <button data-cat="storage" onclick="filterCategory('storage', this)" class="cat-tab relative z-10 text-stone-300 hover:text-brandGoldLight px-4 py-2.5 rounded-xl border border-brandBorder/80 transition-colors duration-300">
+          <i class="fa-solid fa-layer-group mr-1.5 text-[11px]"></i>Shelves & Storage (6)
+        </button>
+      </div>
+    </div>
+
+    <!-- Active Filter Indicator / Clear Alert -->
+    <div id="filterInfoBar" class="hidden mb-6 bg-brandGold/10 border border-brandGold/40 text-xs px-4 py-3 rounded-xl text-stone-200 flex items-center justify-between">
+      <span>Filtered Results for: <strong id="filterKeywordText" class="text-brandGoldLight"></strong></span>
+      <button onclick="resetAllFilters()" class="text-brandGold font-bold hover:underline text-xs">Reset All Filters</button>
+    </div>
+
+    <!-- Empty State Banner -->
+    <div id="emptyCatalogState" class="hidden py-16 text-center text-brandMuted bg-charcoalCard rounded-3xl border border-brandBorder mb-6">
+      <i class="fa-solid fa-couch text-4xl text-brandGold/40 mb-3"></i>
+      <h4 class="font-bold text-white">Koi design nahi mila</h4>
+      <p class="text-xs text-brandMuted mt-1">Apni search query change karein ya WhatsApp par direct design bhein.</p>
+      <button onclick="resetAllFilters()" class="mt-4 gold-gradient text-charcoalDeep font-extrabold text-xs px-5 py-2.5 rounded-xl">Sab Designs Dekhein</button>
+    </div>
+
+    <!-- Products Grid (Isotope / FLIP Animated 3D Tilt Cards) -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 relative">
+      <!-- Populated & animated via JS -->
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- INTERACTIVE BRIDAL & CUSTOM PACKAGE ESTIMATE CALCULATOR   -->
+  <!-- ========================================================= -->
+  <section id="calculator" class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="bg-gradient-to-br from-charcoalCard via-charcoalMain to-charcoalDeep rounded-3xl border border-brandGold/30 p-6 sm:p-10 shadow-2xl gold-border-glow">
+      <div class="max-w-3xl mb-8">
+        <span class="text-xs font-bold uppercase tracking-[0.18em] text-brandGold bg-brandGold/10 border border-brandGold/30 px-3.5 py-1 rounded-full">
+          Instant Estimate Tool
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-white mt-3">
+          Bridal Package & <span class="gold-text-gradient">Living Room Calculator</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-brandMuted mt-1">
+          Apni pasand ki lakri, bed design, sofa aur almari select karein. Factory rate foran calculate hoga aur 1-click mein WhatsApp par quote mil jayegi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Configuration Form Options -->
+        <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <!-- Bed Structure -->
+          <div class="bg-charcoalDeep/80 p-4 rounded-2xl border border-brandBorder hover:border-brandGold/40 transition">
+            <label class="text-xs font-bold text-stone-200 block mb-2 flex items-center justify-between">
+              <span><i class="fa-solid fa-bed text-brandGold mr-1.5"></i> Bed Set Configuration</span>
+            </label>
+            <select id="calcBed" onchange="calculatePackageCost()" class="w-full text-xs bg-charcoalCard border border-brandBorder rounded-xl p-3 text-stone-100 focus:border-brandGold focus:outline-none">
+              <option value="135000" selected>Geometric Grey Headboard Bed + 2 Side Tables</option>
+              <option value="74000">White Pull-Out Trundle Bed + Headboard Bookshelf</option>
+              <option value="58000">White Daybed with 4 Bottom Storage Drawers</option>
+              <option value="185000">Smart More Lifestyle Complete Bedroom Suite</option>
+            </select>
+          </div>
+
+          <!-- Wardrobe / Shelving -->
+          <div class="bg-charcoalDeep/80 p-4 rounded-2xl border border-brandBorder hover:border-brandGold/40 transition">
+            <label class="text-xs font-bold text-stone-200 block mb-2">
+              <i class="fa-solid fa-door-closed text-brandGold mr-1.5"></i> Bookshelf / Storage Unit
+            </label>
+            <select id="calcWardrobe" onchange="calculatePackageCost()" class="w-full text-xs bg-charcoalCard border border-brandBorder rounded-xl p-3 text-stone-100 focus:border-brandGold focus:outline-none">
+              <option value="64000" selected>Tall Dark Wood Glass-Door Library Bookshelf</option>
+              <option value="52000">Built-In Slatted Wall Wooden Shelving Unit</option>
+              <option value="24500">Wall-Mounted Wooden TV Media Console Shelf</option>
+              <option value="0">Skip Storage Unit (Rs. 0)</option>
+            </select>
+          </div>
+
+          <!-- Dining / Coffee Table -->
+          <div class="bg-charcoalDeep/80 p-4 rounded-2xl border border-brandBorder hover:border-brandGold/40 transition">
+            <label class="text-xs font-bold text-stone-200 block mb-2">
+              <i class="fa-solid fa-utensils text-brandGold mr-1.5"></i> Dining & Coffee Table
+            </label>
+            <select id="calcDressing" onchange="calculatePackageCost()" class="w-full text-xs bg-charcoalCard border border-brandBorder rounded-xl p-3 text-stone-100 focus:border-brandGold focus:outline-none">
+              <option value="115000" selected>6-Seater Leaf-Cutout Solid Sheesham Dining Set</option>
+              <option value="34000">Square Wooden Coffee Table with Side Bookshelves</option>
+              <option value="0">Skip Dining / Table (Rs. 0)</option>
+            </select>
+          </div>
+
+          <!-- Wall Floating Shelves -->
+          <div class="bg-charcoalDeep/80 p-4 rounded-2xl border border-brandBorder hover:border-brandGold/40 transition">
+            <label class="text-xs font-bold text-stone-200 block mb-2">
+              <i class="fa-solid fa-layer-group text-brandGold mr-1.5"></i> Wall Shelves Add-on
+            </label>
+            <select id="calcSofa" onchange="calculatePackageCost()" class="w-full text-xs bg-charcoalCard border border-brandBorder rounded-xl p-3 text-stone-100 focus:border-brandGold focus:outline-none">
+              <option value="14500" selected>Dark Brown Square Floating Wall Shelves (Set of 3)</option>
+              <option value="16500">Pink & Blue Geometric Wall Display Shelves</option>
+              <option value="0">Skip Wall Shelves (Rs. 0)</option>
+            </select>
+          </div>
+
+          <!-- Polish / Finish Grade -->
+          <div class="bg-charcoalDeep/80 p-4 rounded-2xl border border-brandBorder sm:col-span-2">
+            <label class="text-xs font-bold text-stone-200 block mb-2.5">
+              <i class="fa-solid fa-brush text-brandGold mr-1.5"></i> Finishing & Polish Standard
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <label class="border border-brandBorder bg-charcoalCard rounded-xl p-2.5 flex items-center text-xs cursor-pointer hover:border-brandGold transition">
+                <input type="radio" name="polish" value="15000" onchange="calculatePackageCost()" checked class="accent-brandGold mr-2" />
+                <span class="text-stone-200">High-Gloss Deco</span>
+              </label>
+              <label class="border border-brandBorder bg-charcoalCard rounded-xl p-2.5 flex items-center text-xs cursor-pointer hover:border-brandGold transition">
+                <input type="radio" name="polish" value="10000" onchange="calculatePackageCost()" class="accent-brandGold mr-2" />
+                <span class="text-stone-200">Walnut Matte</span>
+              </label>
+              <label class="border border-brandBorder bg-charcoalCard rounded-xl p-2.5 flex items-center text-xs cursor-pointer hover:border-brandGold transition">
+                <input type="radio" name="polish" value="22000" onchange="calculatePackageCost()" class="accent-brandGold mr-2" />
+                <span class="text-stone-200">Gold Leaf Patina</span>
+              </label>
+              <label class="border border-brandBorder bg-charcoalCard rounded-xl p-2.5 flex items-center text-xs cursor-pointer hover:border-brandGold transition">
+                <input type="radio" name="polish" value="0" onchange="calculatePackageCost()" class="accent-brandGold mr-2" />
+                <span class="text-stone-200">Raw Unpolished</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculated Summary Box -->
+        <div class="lg:col-span-4 bg-charcoalDeep text-white p-6 rounded-3xl border border-brandGold/50 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between border-b border-brandBorder pb-3">
+              <span class="text-xs text-brandGold uppercase font-bold tracking-wider">Estimated Factory Total</span>
+              <span class="text-[10px] bg-brandGold/20 text-brandGoldLight border border-brandGold/40 font-bold px-2.5 py-0.5 rounded-full">Wholesale Rate</span>
+            </div>
+            
+            <div class="my-5">
+              <span class="text-xs text-brandMuted block font-medium">Estimated Direct Cost:</span>
+              <div class="text-3xl sm:text-4xl font-heading font-extrabold gold-text-gradient mt-1">
+                Rs. <span id="calcTotalDisplay">343,500</span>
+              </div>
+              <p class="text-[11px] text-brandMuted mt-2">
+                Estimated Showroom Retail: <span class="line-through text-rose-400" id="calcRetailDisplay">Rs. 474,030</span>
+                <span class="text-emerald-400 block font-semibold mt-1">Aapki Factory Bachat: ~Rs. <span id="calcSavingsDisplay">130,530</span></span>
+              </p>
+            </div>
+
+            <ul class="text-[11px] text-stone-300 space-y-2 border-t border-brandBorder pt-4">
+              <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2 text-xs"></i> 100% Solid Seasoned Wood</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2 text-xs"></i> Master MoltyFoam 10-Yr Ortho Support</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2 text-xs"></i> 10-Year Anti-Termite Guarantee</li>
+            </ul>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-brandBorder">
+            <button onclick="sendCalculatorToWhatsApp()" data-magnetic class="w-full gold-gradient hover:brightness-110 text-charcoalDeep font-extrabold text-xs sm:text-sm py-3.5 px-4 rounded-xl flex items-center justify-center shadow-lg transition">
+              <i class="fa-brands fa-whatsapp text-base mr-2"></i> Send Estimate To Workshop
+            </button>
+            <p class="text-[10px] text-center text-brandMuted mt-2">No advance required for quotation verification.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- WOOD & POLISH FINISHES SHOWCASE                           -->
+  <!-- ========================================================= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="bg-charcoalCard rounded-3xl border border-brandBorder p-6 sm:p-10">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="text-xs font-bold text-brandGold uppercase tracking-[0.2em]">Raw Material Quality</span>
+        <h3 class="text-2xl sm:text-3xl font-heading font-extrabold text-white mt-1">
+          Karkhana Wood <span class="gold-text-gradient">Polish & Swatches</span>
+        </h3>
+        <p class="text-xs text-brandMuted mt-1">Har furniture piece ko aapki marzi ki polish finish aur wood texture mein customize kiya jata hai.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Finish 1 -->
+        <div class="border border-brandBorder hover:border-brandGold/60 rounded-2xl p-4 bg-charcoalDeep/70 text-center transition transform hover:-translate-y-1 cursor-interactive" onclick="openFinishWhatsApp('High-Gloss Deco Polish')">
+          <div class="w-full h-32 rounded-xl mb-3 overflow-hidden shadow-inner bg-stone-900 flex items-center justify-center relative border border-brandGold/20">
+            <div class="absolute inset-0 bg-gradient-to-tr from-black via-stone-800 to-amber-900/50"></div>
+            <span class="relative z-10 text-white font-bold text-xs tracking-wider uppercase"><i class="fa-solid fa-sparkles text-brandGold mr-1"></i> High Gloss Deco</span>
+          </div>
+          <h4 class="font-bold text-sm text-white">High-Gloss Mirror Deco</h4>
+          <p class="text-[11px] text-brandMuted mt-1">Scratch-resistant Italian PU coat, ultra-smooth for luxury bedroom sets.</p>
+          <span class="inline-block mt-3 text-[11px] font-bold text-brandGold hover:underline">Select This Finish <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+        </div>
+
+        <!-- Finish 2 -->
+        <div class="border border-brandBorder hover:border-brandGold/60 rounded-2xl p-4 bg-charcoalDeep/70 text-center transition transform hover:-translate-y-1 cursor-interactive" onclick="openFinishWhatsApp('Natural Sheesham Grain')">
+          <div class="w-full h-32 rounded-xl mb-3 overflow-hidden shadow-inner bg-amber-950 flex items-center justify-center relative border border-brandGold/20">
+            <div class="absolute inset-0 bg-[radial-gradient(#5E2D0C_2px,transparent_2px)] [background-size:12px_12px] opacity-40"></div>
+            <span class="relative z-10 text-white font-bold text-xs tracking-wider uppercase"><i class="fa-solid fa-tree text-brandGoldLight mr-1"></i> Natural Sheesham</span>
+          </div>
+          <h4 class="font-bold text-sm text-white">Seasoned Sheesham Wood</h4>
+          <p class="text-[11px] text-brandMuted mt-1">Khaalis lakri ke natural grains with warm golden walnut wax seal.</p>
+          <span class="inline-block mt-3 text-[11px] font-bold text-brandGold hover:underline">Select This Finish <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+        </div>
+
+        <!-- Finish 3 -->
+        <div class="border border-brandBorder hover:border-brandGold/60 rounded-2xl p-4 bg-charcoalDeep/70 text-center transition transform hover:-translate-y-1 cursor-interactive" onclick="openFinishWhatsApp('Walnut Matte Finish')">
+          <div class="w-full h-32 rounded-xl mb-3 overflow-hidden shadow-inner bg-[#2c190e] flex items-center justify-center relative border border-brandGold/20">
+            <span class="relative z-10 text-white font-bold text-xs tracking-wider uppercase"><i class="fa-solid fa-feather text-brandGoldLight mr-1"></i> Walnut Matte</span>
+          </div>
+          <h4 class="font-bold text-sm text-white">Warm Walnut Matte</h4>
+          <p class="text-[11px] text-brandMuted mt-1">Fingerprint-free non-reflective luxury finish for dining & media consoles.</p>
+          <span class="inline-block mt-3 text-[11px] font-bold text-brandGold hover:underline">Select This Finish <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+        </div>
+
+        <!-- Finish 4 -->
+        <div class="border border-brandBorder hover:border-brandGold/60 rounded-2xl p-4 bg-charcoalDeep/70 text-center transition transform hover:-translate-y-1 cursor-interactive" onclick="openFinishWhatsApp('Snow White Matte Duco')">
+          <div class="w-full h-32 rounded-xl mb-3 overflow-hidden shadow-inner bg-stone-200 flex items-center justify-center relative border border-brandGold/30">
+            <div class="absolute inset-0 bg-gradient-to-br from-white via-stone-100 to-stone-300"></div>
+            <span class="relative z-10 text-charcoalDeep font-extrabold text-xs tracking-wider uppercase"><i class="fa-solid fa-star text-brandGoldDark mr-1"></i> Snow White Duco</span>
+          </div>
+          <h4 class="font-bold text-sm text-white">Snow White Matte Duco</h4>
+          <p class="text-[11px] text-brandMuted mt-1">Child-safe, non-toxic European white lacquer for trundle & drawer beds.</p>
+          <span class="inline-block mt-3 text-[11px] font-bold text-brandGold hover:underline">Select This Finish <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- WORKSHOP LOCATION & VISIT SECTION                         -->
+  <!-- ========================================================= -->
+  <section id="location" class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="bg-charcoalCard rounded-3xl border border-brandBorder p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xl">
+      <div class="lg:col-span-6">
+        <span class="text-xs font-bold text-brandGold uppercase tracking-[0.2em]">Karkhana Visit Karein</span>
+        <h3 class="text-2xl sm:text-3xl font-heading font-extrabold text-white mt-1">
+          Aamne-Saamne <span class="gold-text-gradient">Lakri & Finish Check Karein</span>
+        </h3>
+        <p class="text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+          Online pictures ke sath sath hum aapko invite karte hain ke Manzoor Colony factory tashreef laayein. Polish se pehle raw lakri, unpolished joints aur Master MoltyFoam ki density apni tasalli se check karein.
+        </p>
+
+        <div class="mt-6 space-y-3.5 text-xs sm:text-sm text-stone-300">
+          <div class="flex items-start">
+            <div class="w-9 h-9 rounded-xl bg-brandGold/15 border border-brandGold/30 text-brandGold flex items-center justify-center mr-3.5 mt-0.5 shrink-0">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <strong class="block text-white">Showroom & Factory Address:</strong>
+              <span class="text-brandMuted">Plot #: G 453/A, Opposite Farooqia Masjid, Manzoor Colony, Karachi, Pakistan</span>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mr-3.5 mt-0.5 shrink-0">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <strong class="block text-white">Direct Contact & WhatsApp:</strong>
+              <span class="text-brandMuted">+92 304 0802848 (Direct Workshop Desk)</span>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="w-9 h-9 rounded-xl bg-brandGold/15 border border-brandGold/30 text-brandGoldLight flex items-center justify-center mr-3.5 mt-0.5 shrink-0">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div>
+              <strong class="block text-white">Workshop Timings:</strong>
+              <span class="text-brandMuted">Open 7 Days a week: 11:00 AM till 10:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="https://maps.google.com/?q=Manzoor+Colony+Farooqia+Masjid+Karachi" target="_blank" data-magnetic class="gold-gradient text-charcoalDeep text-xs font-extrabold px-5 py-3 rounded-xl flex items-center transition shadow-lg">
+            <i class="fa-solid fa-map-location-dot mr-2"></i> Open in Google Maps
+          </a>
+          <a href="https://wa.me/923040802848?text=Assalam-o-Alaikum%20Workshop%20visit%20karna%20chahta%20hoon%2C%20location%20pin%20share%20karein" target="_blank" data-magnetic class="bg-charcoalElevated hover:bg-stone-800 border border-brandGold/40 text-white text-xs font-bold px-5 py-3 rounded-xl flex items-center transition shadow">
+            <i class="fa-brands fa-whatsapp mr-2 text-brandGold text-base"></i> Get WhatsApp Location Pin
+          </a>
+        </div>
+      </div>
+
+      <!-- Map Mock Graphic Box -->
+      <div class="lg:col-span-6 bg-charcoalDeep border border-brandGold/25 rounded-2xl p-6 text-center relative overflow-hidden">
+        <div class="w-20 h-20 bg-white rounded-full p-1.5 flex items-center justify-center mx-auto mb-4 shadow-xl border-2 border-brandGold/70">
+          <img src="assets/logo.png" alt="Furniture Wala Official Emblem" class="w-full h-full object-contain rounded-full" />
+        </div>
+        <h4 class="font-heading font-bold text-lg text-white">Furniture Wala Factory Unit</h4>
+        <p class="text-xs text-brandMuted max-w-sm mx-auto mt-1">Opposite Farooqia Masjid, Main Commercial Corridor, Sector G, Manzoor Colony Karachi.</p>
+        
+        <div class="mt-6 p-4 bg-charcoalCard rounded-xl border border-brandBorder inline-block text-left text-xs space-y-2 shadow-sm text-stone-300">
+          <div><i class="fa-solid fa-car text-brandGold mr-2"></i> <strong class="text-white">From Nursery / Shahrah-e-Faisal:</strong> 10 mins</div>
+          <div><i class="fa-solid fa-car text-brandGold mr-2"></i> <strong class="text-white">From DHA Phase 1 / Korangi Rd:</strong> 8 mins</div>
+          <div><i class="fa-solid fa-car text-brandGold mr-2"></i> <strong class="text-white">From Baloch Colony Flyover:</strong> 6 mins</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER                                                    -->
+  <!-- ========================================================= -->
+  <footer class="bg-charcoalMain text-brandMuted text-xs border-t border-brandGold/20 py-10 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <div class="flex flex-col sm:flex-row items-center gap-3.5">
+        <div class="w-12 h-12 rounded-full bg-white p-1 flex items-center justify-center border-2 border-brandGold/60 shadow-md shrink-0">
+          <img src="assets/logo.png" alt="Furniture Wala Logo" class="w-full h-full object-contain rounded-full" />
+        </div>
+        <div>
+          <p class="text-white font-bold font-heading text-sm tracking-widest">FURNITURE <span class="text-brandGold">WALA</span> KARACHI</p>
+          <p class="text-brandMuted text-[11px] mt-0.5">www.furniturewala.pk • Custom Beds, Solid Sheesham Dining & Architectural Shelving.</p>
+        </div>
+      </div>
+      <div class="text-[11px] text-brandMuted">
+        © 2026 Furniture Wala. All Rights Reserved. • Luxury Direct Factory Digital Showroom.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- 7. PULSING MAGNETIC FLOATING WHATSAPP BUTTON              -->
+  <!-- ========================================================= -->
+  <aside aria-label="Quick WhatsApp Inquiry" class="fixed bottom-6 right-6 z-50 flex items-center">
+    <div id="magneticWhatsappBtn" class="whatsapp-pulse-wrapper" data-magnetic data-magnetic-strength="0.38">
+      <span class="whatsapp-pulse-ring" aria-hidden="true"></span>
+      <span class="whatsapp-pulse-ring-delay" aria-hidden="true"></span>
+      <a href="https://wa.me/923040802848?text=Assalam-o-Alaikum%20Furniture%20Wala!%20Mujhe%20designs%20aur%20rates%20ki%20details%20chahiye." target="_blank" class="relative bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white p-4 sm:px-5 sm:py-3.5 rounded-full shadow-2xl flex items-center space-x-2.5 transition border border-brandGold/60">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline font-bold text-xs tracking-wide">Direct Workshop WhatsApp</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ========================================================= -->
+  <!-- PRODUCT QUICK VIEW MODAL                                  -->
+  <!-- ========================================================= -->
+  <div id="quickViewModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-charcoalCard rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative border border-brandGold/40 shadow-2xl">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-charcoalElevated hover:bg-brandGold hover:text-charcoalDeep text-stone-300 flex items-center justify-center text-sm transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start mt-2">
+        <div class="rounded-2xl overflow-hidden bg-charcoalDeep border border-brandBorder">
+          <img id="modalImg" src="" alt="Product Image" class="w-full h-64 object-cover">
+          <div class="p-2.5 bg-charcoalMain text-brandGold text-[11px] font-bold text-center tracking-wider border-t border-brandBorder">
+            <span id="modalCode">CODE: FW-BD-01</span>
+          </div>
+        </div>
+
+        <div>
+          <span id="modalCat" class="text-[10px] font-extrabold uppercase tracking-wider text-brandGold bg-brandGold/15 border border-brandGold/30 px-2.5 py-1 rounded-full">Beds & Bedrooms</span>
+          <h3 id="modalTitle" class="text-xl font-heading font-bold text-white mt-2.5">Product Name</h3>
+          
+          <div class="my-3">
+            <span class="text-[10px] text-brandMuted uppercase font-bold block">Factory Direct Rate</span>
+            <span id="modalPrice" class="text-2xl font-extrabold gold-text-gradient">Rs. 135,000</span>
+          </div>
+
+          <p id="modalDesc" class="text-xs text-stone-300 leading-relaxed border-t border-brandBorder pt-3">
+            Description details will appear here.
+          </p>
+
+          <div class="mt-4 space-y-1.5 text-xs text-stone-300 bg-charcoalDeep p-3.5 rounded-xl border border-brandBorder">
+            <div><i class="fa-solid fa-tree text-brandGold mr-1.5"></i> <strong class="text-white">Material:</strong> <span id="modalWood">Solid Sheesham</span></div>
+            <div><i class="fa-solid fa-brush text-brandGold mr-1.5"></i> <strong class="text-white">Finish:</strong> <span id="modalPolish">Italian High-Gloss Deco</span></div>
+            <div><i class="fa-solid fa-certificate text-emerald-400 mr-1.5"></i> <strong class="text-white">Guarantee:</strong> 10-Year Termite Proof</div>
+          </div>
+
+          <div class="mt-6 flex gap-2.5">
+            <button id="modalWhatsAppBtn" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs py-3 rounded-xl flex items-center justify-center shadow">
+              <i class="fa-brands fa-whatsapp text-base mr-2"></i> WhatsApp
+            </button>
+            <button id="modalAddShortlistBtn" class="gold-gradient text-charcoalDeep text-xs px-4 py-3 rounded-xl font-extrabold">
+              + Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- CUSTOMER SHORTLIST / CART QUOTATION DRAWER                -->
+  <!-- ========================================================= -->
+  <div id="shortlistDrawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-charcoalCard z-50 shadow-2xl border-l border-brandGold/30 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 border-b border-brandBorder flex items-center justify-between bg-charcoalDeep text-white">
+      <div>
+        <h4 class="font-heading font-bold text-sm">Shortlist & Quotation Cart</h4>
+        <p class="text-[10px] text-brandGold">Consolidated Wholesale Factory Quote</p>
+      </div>
+      <button onclick="toggleShortlistModal(false)" class="text-brandMuted hover:text-brandGold text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div id="shortlistItemsContainer" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <div id="emptyShortlistMsg" class="text-center py-12 text-brandMuted text-xs">
+        <i class="fa-solid fa-bag-shopping text-3xl mb-3 text-brandGold/40"></i>
+        <p>Aapki shortlist abhi khali hai.<br/>Catalog se designs add karein taake 1-click factory quote bhej sakein.</p>
+      </div>
+    </div>
+
+    <div class="p-4 border-t border-brandBorder bg-charcoalDeep">
+      <div class="flex items-center justify-between mb-3 text-xs">
+        <span class="font-bold text-brandMuted">Total Factory Estimate:</span>
+        <span class="font-extrabold text-base gold-text-gradient">Rs. <span id="shortlistTotalDisplay">0</span></span>
+      </div>
+      <button onclick="sendConsolidatedShortlistToWhatsApp()" class="w-full gold-gradient hover:brightness-110 text-charcoalDeep font-extrabold text-xs py-3.5 rounded-xl flex items-center justify-center shadow-lg">
+        <i class="fa-brands fa-whatsapp text-base mr-2"></i> Send Complete Quote To Workshop
+      </button>
+      <button onclick="clearShortlist()" class="w-full text-center text-[10px] text-rose-400 hover:underline mt-2.5">
+        Clear All Items
+      </button>
+    </div>
+  </div>
+  <div id="drawerBackdrop" onclick="toggleShortlistModal(false)" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden"></div>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT: PRODUCTION-READY 60FPS ANIMATION ENGINE       -->
+  <!-- ========================================================= -->
+  <script>
+    /* ---------------------------------------------------------
+       MODULE 0: SVG DATA URI GENERATOR FOR SPECIALIZED ASSETS
+       --------------------------------------------------------- */
+    function createLifestyleBedroomSvg() {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#171513"/>
+            <stop offset="55%" stop-color="#26221E"/>
+            <stop offset="100%" stop-color="#100E0D"/>
+          </linearGradient>
+          <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#BF953F"/>
+            <stop offset="50%" stop-color="#FCF6BA"/>
+            <stop offset="100%" stop-color="#D4AF37"/>
+          </linearGradient>
+          <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#5C3A21"/>
+            <stop offset="100%" stop-color="#3B2313"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="600" fill="url(#bg)"/>
+        <!-- Slatted Luxury Wall Panels -->
+        <g opacity="0.25" stroke="#D4AF37" stroke-width="2">
+          <line x1="80" y1="40" x2="80" y2="420"/><line x1="110" y1="40" x2="110" y2="420"/><line x1="140" y1="40" x2="140" y2="420"/><line x1="170" y1="40" x2="170" y2="420"/>
+          <line x1="630" y1="40" x2="630" y2="420"/><line x1="660" y1="40" x2="660" y2="420"/><line x1="690" y1="40" x2="690" y2="420"/><line x1="720" y1="40" x2="720" y2="420"/>
+        </g>
+        <!-- Backlit Gold Cove Frame -->
+        <rect x="200" y="65" width="400" height="330" rx="8" fill="#12100E" stroke="url(#gold)" stroke-width="2.5"/>
+        <!-- Lifestyle Typography Banner -->
+        <text x="400" y="130" text-anchor="middle" fill="url(#gold)" font-family="Cinzel, serif" font-size="27" font-weight="800" letter-spacing="5">SMART MORE LIFESTYLE</text>
+        <text x="400" y="158" text-anchor="middle" fill="#A69F95" font-family="Inter, sans-serif" font-size="12" letter-spacing="3">BESPOKE DESIGNER BEDROOM EDITION</text>
+        <!-- Upholstered Headboard & Bed Illustration -->
+        <rect x="240" y="210" width="320" height="125" rx="10" fill="#2D2A27" stroke="#D4AF37" stroke-opacity="0.45" stroke-width="1.5"/>
+        <rect x="275" y="295" width="115" height="40" rx="10" fill="#E8E2D5"/>
+        <rect x="410" y="295" width="115" height="40" rx="10" fill="#E8E2D5"/>
+        <rect x="210" y="330" width="380" height="75" rx="8" fill="#F5F2EB"/>
+        <rect x="210" y="365" width="380" height="55" rx="6" fill="url(#wood)"/>
+        <rect x="195" y="405" width="410" height="38" rx="6" fill="#2A180D" stroke="#D4AF37" stroke-opacity="0.4"/>
+        <!-- Side Tables + Warm Lamps -->
+        <rect x="105" y="355" width="75" height="85" rx="6" fill="url(#wood)" stroke="#D4AF37" stroke-opacity="0.35"/>
+        <rect x="620" y="355" width="75" height="85" rx="6" fill="url(#wood)" stroke="#D4AF37" stroke-opacity="0.35"/>
+        <circle cx="142" cy="315" r="20" fill="#F3DE8A" opacity="0.85"/>
+        <circle cx="657" cy="315" r="20" fill="#F3DE8A" opacity="0.85"/>
+        <!-- Floor Rug -->
+        <ellipse cx="400" cy="495" rx="290" ry="38" fill="#25221E" stroke="url(#gold)" stroke-width="1" stroke-opacity="0.4"/>
+      </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+
+    function createPinkBlueGeometricShelfSvg() {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+        <rect width="800" height="600" fill="#F4F1EA"/>
+        <rect x="0" y="500" width="800" height="100" fill="#E5DFD3"/>
+        <!-- Shadow -->
+        <rect x="175" y="125" width="260" height="260" rx="8" fill="#000" opacity="0.1"/>
+        <rect x="365" y="195" width="260" height="260" rx="8" fill="#000" opacity="0.1"/>
+        <!-- Interlocking Pink Geometric Frame -->
+        <rect x="160" y="110" width="260" height="260" rx="6" fill="none" stroke="#E06D85" stroke-width="26"/>
+        <line x1="160" y1="240" x2="420" y2="240" stroke="#E06D85" stroke-width="18"/>
+        <!-- Interlocking Blue Geometric Frame -->
+        <rect x="350" y="180" width="260" height="260" rx="6" fill="none" stroke="#3B82C4" stroke-width="26"/>
+        <line x1="480" y1="180" x2="480" y2="440" stroke="#3B82C4" stroke-width="18"/>
+        <!-- White Central Cube Accent -->
+        <rect x="330" y="160" width="110" height="110" rx="4" fill="none" stroke="#FFFFFF" stroke-width="16"/>
+        <!-- Decor Items on Shelves -->
+        <circle cx="245" cy="205" r="22" fill="#D4AF37"/>
+        <rect x="515" y="345" width="22" height="72" rx="3" fill="#E06D85"/>
+        <rect x="542" y="360" width="22" height="57" rx="3" fill="#2C2925"/>
+        <polygon points="415,420 438,370 461,420" fill="#3B82C4"/>
+      </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+
+    function createDarkBrownSquareShelvesSvg() {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+        <rect width="800" height="600" fill="#EFECE6"/>
+        <!-- Drop Shadows -->
+        <rect x="142" y="95" width="190" height="190" rx="4" fill="#000" opacity="0.14"/>
+        <rect x="315" y="195" width="210" height="210" rx="4" fill="#000" opacity="0.14"/>
+        <rect x="512" y="295" width="165" height="165" rx="4" fill="#000" opacity="0.14"/>
+        <!-- Cube 1 (Top Left - Dark Brown Walnut) -->
+        <rect x="130" y="80" width="190" height="190" rx="4" fill="none" stroke="#3A2212" stroke-width="24"/>
+        <!-- Cube 2 (Center - Dark Brown Walnut) -->
+        <rect x="300" y="180" width="210" height="210" rx="4" fill="none" stroke="#2D190C" stroke-width="26"/>
+        <!-- Cube 3 (Bottom Right - Dark Brown Walnut) -->
+        <rect x="500" y="280" width="165" height="165" rx="4" fill="none" stroke="#3A2212" stroke-width="22"/>
+        <!-- Subtle Luxury Decor Inside Cubes -->
+        <circle cx="225" cy="225" r="24" fill="#C59B27"/>
+        <rect x="375" y="305" width="60" height="65" rx="6" fill="#D4AF37" opacity="0.85"/>
+        <ellipse cx="582" cy="405" rx="22" ry="26" fill="#2E5A44"/>
+      </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+
+    function createSlattedWallShelvesSvg() {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+        <rect width="800" height="600" fill="#1B1612"/>
+        <!-- Vertical Timber Slats Background -->
+        <g fill="#6E4726">
+          <rect x="40" y="0" width="18" height="600"/><rect x="76" y="0" width="18" height="600"/><rect x="112" y="0" width="18" height="600"/><rect x="148" y="0" width="18" height="600"/><rect x="184" y="0" width="18" height="600"/><rect x="220" y="0" width="18" height="600"/><rect x="256" y="0" width="18" height="600"/><rect x="292" y="0" width="18" height="600"/><rect x="328" y="0" width="18" height="600"/><rect x="364" y="0" width="18" height="600"/><rect x="400" y="0" width="18" height="600"/><rect x="436" y="0" width="18" height="600"/><rect x="472" y="0" width="18" height="600"/><rect x="508" y="0" width="18" height="600"/><rect x="544" y="0" width="18" height="600"/><rect x="580" y="0" width="18" height="600"/><rect x="616" y="0" width="18" height="600"/><rect x="652" y="0" width="18" height="600"/><rect x="688" y="0" width="18" height="600"/><rect x="724" y="0" width="18" height="600"/>
+        </g>
+        <!-- Warm LED Backlight Glow Behind Shelves -->
+        <ellipse cx="400" cy="300" rx="280" ry="210" fill="#F3DE8A" opacity="0.12"/>
+        <!-- Empty Built-In Thick Wooden Shelves -->
+        <g>
+          <rect x="130" y="130" width="540" height="28" rx="4" fill="#A46B39" stroke="#3A2212" stroke-width="3"/>
+          <rect x="130" y="158" width="540" height="10" fill="#2A170B" opacity="0.7"/>
+
+          <rect x="130" y="280" width="540" height="28" rx="4" fill="#A46B39" stroke="#3A2212" stroke-width="3"/>
+          <rect x="130" y="308" width="540" height="10" fill="#2A170B" opacity="0.7"/>
+
+          <rect x="130" y="430" width="540" height="28" rx="4" fill="#A46B39" stroke="#3A2212" stroke-width="3"/>
+          <rect x="130" y="458" width="540" height="10" fill="#2A170B" opacity="0.7"/>
+
+          <!-- Vertical Built-in Partition Dividers -->
+          <rect x="290" y="130" width="22" height="330" fill="#8C582B"/>
+          <rect x="490" y="130" width="22" height="330" fill="#8C582B"/>
+        </g>
+      </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+
+    function createGlassDoorLibraryBookshelfSvg() {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+        <defs>
+          <linearGradient id="wallBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1E1B18"/>
+            <stop offset="100%" stop-color="#12100E"/>
+          </linearGradient>
+          <linearGradient id="darkWood" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#2D180C"/>
+            <stop offset="50%" stop-color="#3F2414"/>
+            <stop offset="100%" stop-color="#241208"/>
+          </linearGradient>
+          <linearGradient id="glassReflection" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+            <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.03"/>
+            <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.08"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="600" fill="url(#wallBg)"/>
+        <rect x="0" y="535" width="800" height="65" fill="#171411"/>
+        <!-- Drop Shadow -->
+        <rect x="235" y="42" width="360" height="515" rx="6" fill="#000" opacity="0.45"/>
+        <!-- Main Tall Dark Wood Cabinet Body -->
+        <rect x="220" y="30" width="360" height="515" rx="4" fill="url(#darkWood)" stroke="#54321D" stroke-width="3"/>
+        <!-- Crown Molding Top -->
+        <polygon points="206,30 594,30 580,48 220,48" fill="#3A2010" stroke="#D4AF37" stroke-opacity="0.35"/>
+        <!-- Interior Dark Back Panel -->
+        <rect x="242" y="54" width="316" height="456" fill="#1A0E07"/>
+        <!-- 5 Wooden Shelves -->
+        <rect x="242" y="142" width="316" height="12" fill="#4B2B18"/>
+        <rect x="242" y="232" width="316" height="12" fill="#4B2B18"/>
+        <rect x="242" y="322" width="316" height="12" fill="#4B2B18"/>
+        <rect x="242" y="412" width="316" height="12" fill="#4B2B18"/>
+        <!-- Colorful Books on Shelves -->
+        <!-- Row 1 -->
+        <rect x="255" y="75" width="18" height="67" fill="#9E2A2B"/><rect x="275" y="82" width="22" height="60" fill="#D4AF37"/><rect x="299" y="70" width="16" height="72" fill="#284B63"/><rect x="317" y="78" width="20" height="64" fill="#E09F3E"/><rect x="340" y="85" width="15" height="57" fill="#52796F"/>
+        <rect x="435" y="74" width="20" height="68" fill="#3C6E71"/><rect x="457" y="80" width="18" height="62" fill="#B5838D"/><rect x="477" y="68" width="24" height="74" fill="#D4AF37"/><rect x="503" y="78" width="17" height="64" fill="#6D597A"/>
+        <!-- Row 2 -->
+        <rect x="255" y="164" width="22" height="68" fill="#D4AF37"/><rect x="279" y="170" width="18" height="62" fill="#355070"/><rect x="299" y="160" width="24" height="72" fill="#B56576"/><rect x="325" y="168" width="16" height="64" fill="#E56B6F"/>
+        <rect x="425" y="162" width="19" height="70" fill="#2A9D8F"/><rect x="446" y="168" width="22" height="64" fill="#E9C46A"/><rect x="470" y="158" width="18" height="74" fill="#E76F51"/><rect x="490" y="166" width="20" height="66" fill="#264653"/><rect x="512" y="172" width="16" height="60" fill="#D4AF37"/>
+        <!-- Row 3 -->
+        <rect x="258" y="254" width="18" height="68" fill="#6B705C"/><rect x="278" y="260" width="20" height="62" fill="#CB997E"/><rect x="300" y="250" width="22" height="72" fill="#D4AF37"/><rect x="324" y="258" width="18" height="64" fill="#A5A58D"/>
+        <rect x="440" y="252" width="22" height="70" fill="#9B2226"/><rect x="464" y="260" width="18" height="62" fill="#CA6702"/><rect x="484" y="254" width="20" height="68" fill="#005F73"/><rect x="506" y="258" width="18" height="64" fill="#EE9B00"/>
+        <!-- Row 4 -->
+        <rect x="255" y="344" width="24" height="68" fill="#3D405B"/><rect x="281" y="350" width="18" height="62" fill="#E07A5F"/><rect x="301" y="342" width="20" height="70" fill="#81B29A"/><rect x="323" y="348" width="22" height="64" fill="#F2CC8F"/>
+        <rect x="430" y="344" width="20" height="68" fill="#D4AF37"/><rect x="452" y="348" width="22" height="64" fill="#457B9D"/><rect x="476" y="340" width="19" height="72" fill="#E63946"/><rect x="497" y="350" width="21" height="62" fill="#A8DADC"/>
+        <!-- Row 5 -->
+        <rect x="260" y="436" width="25" height="74" fill="#D4AF37"/><rect x="287" y="442" width="22" height="68" fill="#283618"/><rect x="311" y="438" width="20" height="72" fill="#BC6C25"/>
+        <rect x="445" y="436" width="24" height="74" fill="#606C38"/><rect x="471" y="442" width="20" height="68" fill="#DDA15E"/><rect x="493" y="438" width="22" height="72" fill="#9E2A2B"/>
+        <!-- Framed Double Glass Doors Overlay -->
+        <rect x="240" y="52" width="156" height="460" fill="url(#glassReflection)" stroke="#5A351E" stroke-width="6"/>
+        <rect x="404" y="52" width="156" height="460" fill="url(#glassReflection)" stroke="#5A351E" stroke-width="6"/>
+        <!-- Center Mullion & Brass Handles -->
+        <rect x="396" y="50" width="8" height="464" fill="#2A160B"/>
+        <circle cx="386" cy="285" r="5" fill="#D4AF37"/>
+        <circle cx="414" cy="285" r="5" fill="#D4AF37"/>
+      </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+
+    /* ---------------------------------------------------------
+       MODULE 0B: MASTER PRODUCT CATALOG DATA (12 SPECIFIED ITEMS)
+       --------------------------------------------------------- */
+    const products = [
+      // ==================== BEDS & BEDROOMS (4 ITEMS) ====================
+      {
+        id: 1,
+        code: "FW-BD-01",
+        title: "White Storage Daybed with 4 Bottom Drawers",
+        category: "beds",
+        categoryName: "Beds & Bedrooms",
+        price: 58000,
+        retailPrice: 88000,
+        wood: "Seasoned Keekar + MDF Duco",
+        polish: "Snow White Matte Duco Coat",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["4 Storage Drawers", "Kids & Guest Ready"],
+        image: "assets/catalog/white-storage-drawer-bed.png",
+        description: "White single/daybed featuring 4 deep pull-out bottom storage drawers with smooth telescopic channels, curved backrest frame, and child-safe rounded edges."
+      },
+      {
+        id: 2,
+        code: "FW-BD-02",
+        title: "White Pull-Out Trundle Bed & Headboard Bookshelf",
+        category: "beds",
+        categoryName: "Beds & Bedrooms",
+        price: 74000,
+        retailPrice: 112000,
+        wood: "Solid Hardwood + Imported Board",
+        polish: " Frost White Italian Lacquer",
+        badge: "New Arrival",
+        badgeStyle: "emerald",
+        tags: ["Pull-Out Trundle", "Bookcase Headboard"],
+        image: "assets/catalog/white-trundle-bookshelf-bed.png",
+        description: "Space-saving twin bed with an integrated multi-compartment headboard bookshelf and a smooth-gliding pull-out lower trundle bed for siblings or guests."
+      },
+      {
+        id: 3,
+        code: "FW-BD-03",
+        title: "Geometric Grey Tufted Headboard Wooden Bed Set",
+        category: "beds",
+        categoryName: "Beds & Bedrooms",
+        price: 135000,
+        retailPrice: 198000,
+        wood: "Solid Seasoned Sheesham Frame",
+        polish: "Warm Walnut & Charcoal Suede",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["2 Side Tables Included", "MoltyOrtho Ready"],
+        image: "assets/catalog/wooden-geometric-headboard-bed.png",
+        description: "King size wooden bed featuring a 3D sculptural grey geometric upholstered headboard, walnut-finished frame, and two matching grey-and-walnut bedside tables."
+      },
+      {
+        id: 4,
+        code: "FW-BD-04",
+        title: "Smart More Lifestyle Designer Bedroom Suite",
+        category: "beds",
+        categoryName: "Beds & Bedrooms",
+        price: 185000,
+        retailPrice: 275000,
+        wood: "100% Solid Seasoned Sheesham",
+        polish: "Bespoke Walnut & Brushed Gold",
+        badge: "New Arrival",
+        badgeStyle: "emerald",
+        tags: ["Smart More Lifestyle", "Complete Suite"],
+        image: createLifestyleBedroomSvg(),
+        description: "Complete 'SMART MORE LIFESTYLE' luxury master bedroom edition including a low-profile designer king bed, backlit slatted feature wall panels, and matching floating nightstands."
+      },
+
+      // ==================== DINING & TABLES (2 ITEMS) ====================
+      {
+        id: 5,
+        code: "FW-DN-01",
+        title: "6-Seater Leaf-Cutout Solid Sheesham Dining Set",
+        category: "dining",
+        categoryName: "Dining & Tables",
+        price: 115000,
+        retailPrice: 175000,
+        wood: "100% Solid Seasoned Sheesham",
+        polish: "Natural Golden Walnut Grain",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["6 Leaf-Cutout Chairs", "Leatherette Cushions"],
+        image: "assets/catalog/leaf-cutout-dining-table.png",
+        description: "Hand-crafted rectangular wooden dining table paired with six matching high-back Sheesham chairs featuring intricate CNC botanical leaf-pattern cutouts and black padded seats."
+      },
+      {
+        id: 6,
+        code: "FW-TB-02",
+        title: "Square Wooden Coffee Table with Side Bookshelves",
+        category: "dining",
+        categoryName: "Dining & Tables",
+        price: 34000,
+        retailPrice: 52000,
+        wood: "Solid Sheesham + Slatted Timber Top",
+        polish: "Scratch-Resistant Matte Walnut",
+        badge: "New Arrival",
+        badgeStyle: "emerald",
+        tags: ["Built-in Bookshelves", "Center Table"],
+        image: "assets/catalog/square-bookshelf-coffee-table.png",
+        description: "Architectural square wooden center coffee table with a slatted centre planter recess and built-in side bookshelf compartments to store books and magazines neatly."
+      },
+
+      // ==================== SHELVES & STORAGE (6 ITEMS) ====================
+      {
+        id: 7,
+        code: "FW-ST-01",
+        title: "Tall Dark Wood Glass-Door Library Bookshelf",
+        category: "storage",
+        categoryName: "Shelves & Storage",
+        price: 64000,
+        retailPrice: 96000,
+        wood: "Solid Seasoned Sheesham + Tempered Glass",
+        polish: "Deep Espresso Mahogany",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["Dust-Proof Glass Doors", "6-Tier Shelving"],
+        image: createGlassDoorLibraryBookshelfSvg(),
+        description: "Full-height dark wood library bookcase with framed tempered glass doors, adjustable heavy-load timber shelves, and brass hardware for books and collectibles."
+      },
+      {
+        id: 8,
+        code: "FW-ST-02",
+        title: "Pink & Blue Geometric Wall Display Shelves",
+        category: "storage",
+        categoryName: "Shelves & Storage",
+        price: 16500,
+        retailPrice: 26000,
+        wood: "Seasoned MDF + Hardwood Joinery",
+        polish: "Pastel Lavender-Pink & Sky Blue Duco",
+        badge: "New Arrival",
+        badgeStyle: "emerald",
+        tags: ["Geometric Wall Cubes", "Concealed Mounts"],
+        image: "assets/catalog/pink-blue-geometric-shelves.png",
+        description: "Vibrant wall-mounted pink and blue interlocking geometric display shelves crafted in our workshop for modern bedrooms, kids' study rooms, and creative walls."
+      },
+      {
+        id: 9,
+        code: "FW-ST-03",
+        title: "Dark Brown Square Floating Wall Shelves (Set of 3)",
+        category: "storage",
+        categoryName: "Shelves & Storage",
+        price: 14500,
+        retailPrice: 23000,
+        wood: "Solid Seasoned Sheesham Wood",
+        polish: "Dark Espresso Walnut Matte",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["Set of 3 Squares", "Heavy Hidden Brackets"],
+        image: createDarkBrownSquareShelvesSvg(),
+        description: "Set of three graduated dark brown square wall-mounted floating cube shelves with invisible steel wall anchors for displaying vases, frames, and decor."
+      },
+      {
+        id: 10,
+        code: "FW-ST-04",
+        title: "Wall-Mounted Wooden TV Console & Media Shelf",
+        category: "storage",
+        categoryName: "Shelves & Storage",
+        price: 24500,
+        retailPrice: 38000,
+        wood: "Solid Walnut-Finished Timber",
+        polish: "Warm Mocha Wood Grain",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["Cable Routing", "Soundbar & Media Bay"],
+        image: "assets/catalog/tv-console-shelf.png",
+        description: "Asymmetrical wall-mounted wooden TV console shelf with a dedicated recessed media player compartment, top soundbar ledge, and hidden wire management."
+      },
+      {
+        id: 11,
+        code: "FW-ST-05",
+        title: "Built-In Wooden Shelves on Slatted Feature Wall",
+        category: "storage",
+        categoryName: "Shelves & Storage",
+        price: 52000,
+        retailPrice: 82000,
+        wood: "Solid Teak & Seasoned Sheesham Slats",
+        polish: "Natural Honey Teak Oil Seal",
+        badge: "New Arrival",
+        badgeStyle: "emerald",
+        tags: ["Slatted Backdrop", "Custom Wall Fit"],
+        image: createSlattedWallShelvesSvg(),
+        description: "Custom architectural empty built-in thick wooden shelves mounted against a floor-to-ceiling vertical slatted timber wall panel."
+      },
+      {
+        id: 12,
+        code: "FW-ST-06",
+        title: "High-Gloss White & Walnut Modular Kitchen Cabinets",
+        category: "storage",
+        categoryName: "Shelves & Storage",
+        price: 165000,
+        retailPrice: 245000,
+        wood: "Waterproof Marine Ply + High-Gloss Acrylic",
+        polish: "Mirror White Acrylic & Walnut Veneer",
+        badge: "Best Seller",
+        badgeStyle: "gold",
+        tags: ["Soft-Close Hinges", "Custom Kitchen Storage"],
+        image: "assets/catalog/luxury-modular-kitchen-cabinets.png",
+        description: "Full-height handleless high-gloss white upper storage cabinets paired with rich walnut-grain lower drawers and tall pantry units."
+      }
+    ];
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let shortlist = [];
+
+    /* ---------------------------------------------------------
+       MODULE 1: PRE-LOADER & MAGNETIC LUXURY CURSOR
+       --------------------------------------------------------- */
+    function initPreloader() {
+      const preloader = document.getElementById('preloader');
+      const bar = document.getElementById('preloaderBar');
+      if (!preloader || !bar) return;
+
+      requestAnimationFrame(() => {
+        bar.style.width = '100%';
+      });
+
+      const dismissPreloader = () => {
+        setTimeout(() => {
+          preloader.classList.add('loaded');
+          document.body.classList.add('ui-ready');
+          startHeroSliderAutoPlay();
+        }, 650);
+      };
+
+      if (document.readyState === 'complete') {
+        dismissPreloader();
+      } else {
+        window.addEventListener('load', dismissPreloader, { once: true });
+      }
+    }
+
+    function initMagneticLuxuryCursor() {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+
+      const dot = document.getElementById('cursor-dot');
+      const ring = document.getElementById('cursor-ring');
+      if (!dot || !ring) return;
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+      let activeMagneticEl = null;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+        if (activeMagneticEl) {
+          const rect = activeMagneticEl.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const strength = parseFloat(activeMagneticEl.getAttribute('data-magnetic-strength')) || 0.28;
+          const moveX = (mouseX - centerX) * strength;
+          const moveY = (mouseY - centerY) * strength;
+          activeMagneticEl.style.transform = `translate3d(${moveX.toFixed(1)}px, ${moveY.toFixed(1)}px, 0)`;
+        }
+      }, { passive: true });
+
+      function renderCursorLoop() {
+        let targetX = mouseX;
+        let targetY = mouseY;
+
+        if (activeMagneticEl) {
+          const rect = activeMagneticEl.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          targetX = mouseX + (centerX - mouseX) * 0.35;
+          targetY = mouseY + (centerY - mouseY) * 0.35;
+        }
+
+        ringX += (targetX - ringX) * 0.18;
+        ringY += (targetY - ringY) * 0.18;
+        ring.style.transform = `translate3d(${ringX.toFixed(2)}px, ${ringY.toFixed(2)}px, 0)`;
+        requestAnimationFrame(renderCursorLoop);
+      }
+      requestAnimationFrame(renderCursorLoop);
+
+      const interactiveSelector = 'a, button, select, input, label, [role="button"], .cursor-interactive';
+      document.addEventListener('mouseover', (e) => {
+        const interactiveTarget = e.target.closest(interactiveSelector);
+        if (interactiveTarget) {
+          document.body.classList.add('cursor-hover');
+        }
+        const magneticTarget = e.target.closest('[data-magnetic]');
+        if (magneticTarget) {
+          activeMagneticEl = magneticTarget;
+        }
+      }, { passive: true });
+
+      document.addEventListener('mouseout', (e) => {
+        const interactiveTarget = e.target.closest(interactiveSelector);
+        if (interactiveTarget) {
+          document.body.classList.remove('cursor-hover');
+        }
+        const magneticTarget = e.target.closest('[data-magnetic]');
+        if (magneticTarget && magneticTarget === activeMagneticEl) {
+          magneticTarget.style.transform = '';
+          activeMagneticEl = null;
+        }
+      }, { passive: true });
+    }
+
+    /* ---------------------------------------------------------
+       MODULE 2: SPLIT-TEXT ENGINE & CLIP-PATH HERO SLIDER
+       --------------------------------------------------------- */
+    function initSplitTextHeadings() {
+      const splitTargets = document.querySelectorAll('[data-split-text]');
+      splitTargets.forEach(container => {
+        const rawText = container.textContent.trim();
+        const wordOffset = parseInt(container.getAttribute('data-split-offset') || '0', 10);
+        const words = rawText.split(/\s+/);
+        container.innerHTML = '';
+
+        words.forEach((word, index) => {
+          const maskSpan = document.createElement('span');
+          maskSpan.className = 'split-word-mask';
+
+          const innerSpan = document.createElement('span');
+          innerSpan.className = 'split-word-inner';
+          const delaySeconds = 0.22 + (index + wordOffset) * 0.065;
+          innerSpan.style.transitionDelay = `${delaySeconds.toFixed(3)}s`;
+          innerSpan.textContent = word;
+
+          maskSpan.appendChild(innerSpan);
+          container.appendChild(maskSpan);
+        });
+      });
+    }
+
+    let currentSlideIndex = 0;
+    const SLIDE_INTERVAL_MS = 6500;
+    let slideIntervalId = null;
+    let slideCleanupTimeout = null;
+
+    function goToHeroSlide(targetIndex) {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dots = document.querySelectorAll('.hero-minimal-dot');
+      if (!slides.length) return;
+
+      const nextIdx = (targetIndex + slides.length) % slides.length;
+      if (nextIdx === currentSlideIndex) return;
+
+      const previousSlide = slides[currentSlideIndex];
+      const nextSlide = slides[nextIdx];
+
+      if (slideCleanupTimeout) clearTimeout(slideCleanupTimeout);
+
+      slides.forEach((s, idx) => {
+        if (idx !== currentSlideIndex && idx !== nextIdx) {
+          s.classList.remove('active', 'prev-slide');
+        }
+      });
+
+      previousSlide.classList.remove('active');
+      previousSlide.classList.add('prev-slide');
+
+      nextSlide.style.transition = 'none';
+      nextSlide.classList.remove('prev-slide', 'active');
+      void nextSlide.offsetWidth;
+
+      nextSlide.style.transition = '';
+      nextSlide.classList.add('active');
+
+      currentSlideIndex = nextIdx;
+
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlideIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+
+      slideCleanupTimeout = setTimeout(() => {
+        previousSlide.classList.remove('prev-slide');
+      }, 1260);
+
+      startHeroSliderAutoPlay();
+    }
+
+    function startHeroSliderAutoPlay() {
+      if (slideIntervalId) clearInterval(slideIntervalId);
+      slideIntervalId = setInterval(() => {
+        goToHeroSlide(currentSlideIndex + 1);
+      }, SLIDE_INTERVAL_MS);
+    }
+
+    function triggerCategoryFromHero(cat) {
+      const targetBtn = document.querySelector(`.cat-tab[data-cat="${cat}"]`);
+      if (targetBtn) {
+        filterCategory(cat, targetBtn);
+      }
+    }
+
+    /* ---------------------------------------------------------
+       MODULE 3: GLASSMORPHISM STICKY NAVBAR & HERO PARALLAX
+       --------------------------------------------------------- */
+    function initScrollAndParallax() {
+      const navbar = document.getElementById('mainNavbar');
+      const parallaxLayers = document.querySelectorAll('.hero-parallax-layer');
+      let ticking = false;
+
+      function onScroll() {
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        if (navbar) {
+          if (scrollY > 36) {
+            navbar.classList.add('navbar-scrolled');
+          } else {
+            navbar.classList.remove('navbar-scrolled');
+          }
+        }
+
+        if (scrollY < 1100) {
+          const yOffset = (scrollY * 0.28).toFixed(1);
+          parallaxLayers.forEach(layer => {
+            layer.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+          });
+        }
+
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(onScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      onScroll();
+    }
+
+    /* ---------------------------------------------------------
+       MODULE 4 & 5: BUG-FREE WRAPPING TABS, ISOTOPE GRID, 3D CARDS & ANIMATED BADGES
+       --------------------------------------------------------- */
+    function updateActiveTabPill(activeBtn) {
+      const pill = document.getElementById('activeTabPill');
+      if (!pill || !activeBtn) return;
+
+      const x = activeBtn.offsetLeft;
+      const y = activeBtn.offsetTop;
+      const w = activeBtn.offsetWidth;
+      const h = activeBtn.offsetHeight;
+
+      pill.style.width = `${w}px`;
+      pill.style.height = `${h}px`;
+      pill.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+      document.querySelectorAll('.cat-tab').forEach(btn => {
+        if (btn === activeBtn) {
+          btn.classList.remove('text-stone-300', 'hover:text-brandGoldLight', 'border-brandBorder/80');
+          btn.classList.add('text-charcoalDeep', 'font-extrabold', 'border-transparent');
+        } else {
+          btn.classList.remove('text-charcoalDeep', 'font-extrabold', 'border-transparent');
+          btn.classList.add('text-stone-300', 'hover:text-brandGoldLight', 'border-brandBorder/80');
+        }
+      });
+    }
+
+    function initCatalogDOM() {
+      const grid = document.getElementById('productsGrid');
+      const countAllEl = document.getElementById('count-all');
+      if (countAllEl) countAllEl.textContent = products.length;
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      products.forEach(p => {
+        const itemEl = document.createElement('div');
+        itemEl.className = "catalog-item tilt-card-wrapper";
+        itemEl.setAttribute('data-id', p.id);
+        itemEl.setAttribute('data-category', p.category);
+
+        const badgeClass = p.badgeStyle === 'emerald'
+          ? 'bg-emerald-500/95 text-charcoalDeep border border-emerald-300'
+          : 'gold-gradient text-charcoalDeep border border-brandGoldLight';
+
+        const badgeIcon = p.badge === 'Best Seller'
+          ? '<i class="fa-solid fa-fire-flame-curved mr-1 text-[9px]"></i>'
+          : '<i class="fa-solid fa-sparkles mr-1 text-[9px]"></i>';
+
+        itemEl.innerHTML = `
+          <div class="tilt-card rounded-2xl overflow-hidden flex flex-col justify-between h-full">
+            <div class="tilt-glare"></div>
+
+            <div>
+              <!-- Image Container + Fluid/Liquid Scale Hover + Animated Badges + Slide-Up Action Bar -->
+              <div class="relative h-56 bg-charcoalDeep overflow-hidden">
+                <img onclick="openQuickView(${p.id})" src="${p.image}" alt="${p.title}" class="fluid-product-img cursor-interactive" loading="lazy">
+                
+                <span class="absolute top-3 left-3 bg-charcoalDeep/90 border border-brandGold/40 text-brandGoldLight text-[10px] font-extrabold px-2.5 py-1 rounded-md shadow backdrop-blur-xs z-20">
+                  ${p.code}
+                </span>
+
+                <!-- Gently Pulsing Animated Badge ("New Arrival" / "Best Seller") -->
+                <span class="luxury-pulse-badge absolute top-3 right-3 ${badgeClass} text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-lg z-20 flex items-center">
+                  ${badgeIcon}${p.badge}
+                </span>
+
+                <!-- Slide-Up Action Buttons on Card Hover -->
+                <div class="card-action-drawer absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-charcoalDeep via-charcoalDeep/95 to-transparent flex items-center gap-2 z-30">
+                  <button onclick="addToShortlist(${p.id})" class="flex-1 gold-gradient hover:brightness-110 text-charcoalDeep font-extrabold text-[11px] py-2.5 px-3 rounded-xl shadow-lg flex items-center justify-center transition">
+                    <i class="fa-solid fa-cart-plus mr-1.5 text-xs"></i> Add to Cart
+                  </button>
+                  <button onclick="openQuickView(${p.id})" class="bg-charcoalCard/95 hover:bg-brandGold hover:text-charcoalDeep text-brandGoldLight border border-brandGold/40 font-bold text-[11px] px-3 py-2.5 rounded-xl transition flex items-center">
+                    <i class="fa-solid fa-eye mr-1 text-xs"></i> View Details
+                  </button>
+                </div>
+              </div>
+
+              <!-- Product Details -->
+              <div class="p-4">
+                <div class="flex items-center justify-between text-[11px] text-brandMuted mb-1">
+                  <span class="uppercase tracking-wider text-[10px] text-brandGold font-semibold">${p.categoryName}</span>
+                  <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check text-[10px]"></i> Factory Ready</span>
+                </div>
+                <h3 onclick="openQuickView(${p.id})" class="font-heading font-bold text-sm text-white leading-snug hover:text-brandGoldLight cursor-interactive line-clamp-1 transition" title="${p.title}">
+                  ${p.title}
+                </h3>
+                <p class="text-[11px] text-brandMuted mt-1.5 line-clamp-2 leading-relaxed">
+                  ${p.description}
+                </p>
+
+                <div class="mt-3 flex items-center gap-1.5 flex-wrap">
+                  <span class="text-[10px] bg-brandGold/10 text-brandGoldLight border border-brandGold/25 px-2 py-0.5 rounded font-medium">
+                    <i class="fa-solid fa-tree mr-1 text-brandGold"></i> ${p.tags[0]}
+                  </span>
+                  <span class="text-[10px] bg-charcoalDeep text-stone-300 border border-brandBorder px-2 py-0.5 rounded">
+                    ${p.tags[1] || '10-Yr Warranty'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Price & Direct Inquiry Footer -->
+            <div class="p-4 pt-0 border-t border-brandBorder/80 mt-2">
+              <div class="flex items-baseline justify-between mt-3 mb-3">
+                <div>
+                  <span class="text-[9px] uppercase tracking-wider text-brandMuted font-bold block">Karkhana Price</span>
+                  <span class="text-base font-extrabold gold-text-gradient">Rs. ${p.price.toLocaleString()}</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-[9px] text-brandMuted uppercase font-bold block">Showroom Rate</span>
+                  <span class="text-xs line-through text-rose-400">Rs. ${p.retailPrice.toLocaleString()}</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="openQuickView(${p.id})" class="bg-charcoalElevated hover:bg-brandGold hover:text-charcoalDeep text-stone-200 border border-brandBorder font-bold text-[11px] py-2 rounded-xl transition flex items-center justify-center">
+                  <i class="fa-solid fa-sliders mr-1 text-[10px]"></i> View Details
+                </button>
+                <button onclick="sendSingleWhatsApp('${p.code}', '${p.title}', ${p.price})" class="bg-emerald-600/90 hover:bg-emerald-500 text-white font-bold text-[11px] py-2 rounded-xl transition flex items-center justify-center shadow">
+                  <i class="fa-brands fa-whatsapp text-xs mr-1"></i> WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(itemEl);
+      });
+
+      bind3DTiltCards();
+
+      const defaultTab = document.querySelector('.cat-tab[data-cat="all"]');
+      if (defaultTab) {
+        requestAnimationFrame(() => updateActiveTabPill(defaultTab));
+      }
+      window.addEventListener('resize', () => {
+        const currentTab = document.querySelector(`.cat-tab[data-cat="${activeCategory}"]`);
+        if (currentTab) updateActiveTabPill(currentTab);
+      }, { passive: true });
+    }
+
+    // Isotope / FLIP Shuffle Transition Engine
+    let isotopeTimer = null;
+    function applyIsotopeFilter() {
+      const items = Array.from(document.querySelectorAll('.catalog-item'));
+      const emptyBanner = document.getElementById('emptyCatalogState');
+      if (!items.length) return;
+
+      if (isotopeTimer) clearTimeout(isotopeTimer);
+
+      const firstRects = new Map();
+      items.forEach(el => {
+        if (!el.classList.contains('isotope-hidden')) {
+          firstRects.set(el, el.getBoundingClientRect());
+        }
+      });
+
+      const matchingIds = new Set(
+        products.filter(p => {
+          const matchesCat = (activeCategory === 'all' || p.category === activeCategory);
+          const matchesSearch = searchQuery === '' ||
+            p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.wood.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            p.categoryName.toLowerCase().includes(searchQuery.toLowerCase());
+          return matchesCat && matchesSearch;
+        }).map(p => String(p.id))
+      );
+
+      if (emptyBanner) {
+        if (matchingIds.size === 0) {
+          emptyBanner.classList.remove('hidden');
+        } else {
+          emptyBanner.classList.add('hidden');
+        }
+      }
+
+      const itemsToHide = [];
+      const itemsToEnter = [];
+      const itemsStaying = [];
+
+      items.forEach(el => {
+        const id = el.getAttribute('data-id');
+        const isCurrentlyHidden = el.classList.contains('isotope-hidden');
+        const shouldShow = matchingIds.has(id);
+
+        if (!shouldShow && !isCurrentlyHidden) {
+          el.classList.add('isotope-hiding');
+          itemsToHide.push(el);
+        } else if (shouldShow && isCurrentlyHidden) {
+          itemsToEnter.push(el);
+        } else if (shouldShow && !isCurrentlyHidden) {
+          el.classList.remove('isotope-hiding');
+          itemsStaying.push(el);
+        }
+      });
+
+      const exitDelay = itemsToHide.length > 0 ? 220 : 0;
+
+      isotopeTimer = setTimeout(() => {
+        itemsToHide.forEach(el => {
+          el.classList.remove('isotope-hiding');
+          el.classList.add('isotope-hidden');
+        });
+
+        itemsToEnter.forEach(el => {
+          el.classList.remove('isotope-hidden');
+          el.classList.add('isotope-entering');
+        });
+
+        itemsStaying.forEach(el => {
+          const first = firstRects.get(el);
+          if (!first) return;
+          const last = el.getBoundingClientRect();
+          const dx = first.left - last.left;
+          const dy = first.top - last.top;
+
+          if (Math.abs(dx) > 1 || Math.abs(dy) > 1) {
+            el.style.transition = 'none';
+            el.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+          }
+        });
+
+        void document.body.offsetHeight;
+
+        requestAnimationFrame(() => {
+          itemsStaying.forEach(el => {
+            el.style.transition = '';
+            el.style.transform = '';
+          });
+
+          itemsToEnter.forEach((el, idx) => {
+            setTimeout(() => {
+              el.classList.remove('isotope-entering');
+            }, idx * 50);
+          });
+        });
+      }, exitDelay);
+    }
+
+    function filterCategory(cat, btn) {
+      activeCategory = cat;
+      if (btn) updateActiveTabPill(btn);
+      applyIsotopeFilter();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.trim();
+      const clearBtn = document.getElementById('clearSearchBtn');
+      const infoBar = document.getElementById('filterInfoBar');
+      const keywordText = document.getElementById('filterKeywordText');
+
+      if (searchQuery.length > 0) {
+        clearBtn.classList.remove('hidden');
+        infoBar.classList.remove('hidden');
+        keywordText.innerText = `"${searchQuery}"`;
+      } else {
+        clearBtn.classList.add('hidden');
+        infoBar.classList.add('hidden');
+      }
+      applyIsotopeFilter();
+    }
+
+    function clearSearch() {
+      document.getElementById('catalogSearchInput').value = '';
+      searchQuery = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      document.getElementById('filterInfoBar').classList.add('hidden');
+      applyIsotopeFilter();
+    }
+
+    function resetAllFilters() {
+      document.getElementById('catalogSearchInput').value = '';
+      searchQuery = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      document.getElementById('filterInfoBar').classList.add('hidden');
+      const allBtn = document.querySelector('.cat-tab[data-cat="all"]');
+      filterCategory('all', allBtn);
+    }
+
+    // 3D Tilt Product Cards Engine
+    function bind3DTiltCards() {
+      if (!window.matchMedia('(pointer: fine)').matches) return;
+
+      const cards = document.querySelectorAll('.tilt-card');
+      cards.forEach(card => {
+        const glare = card.querySelector('.tilt-glare');
+
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -9;
+          const rotateY = ((x - centerX) / centerX) * 9;
+
+          card.style.transform = `rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+          if (glare) {
+            const percentX = (x / rect.width) * 100;
+            const percentY = (y / rect.height) * 100;
+            glare.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(243, 222, 138, 0.22), transparent 60%)`;
+          }
+        }, { passive: true });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        }, { passive: true });
+      });
+    }
+
+    /* ---------------------------------------------------------
+       MODULE 6: ANIMATED SCROLL COUNTERS (INTERSECTION OBSERVER)
+       --------------------------------------------------------- */
+    function initScrollCounters() {
+      const counters = document.querySelectorAll('.scroll-counter');
+      if (!counters.length) return;
+
+      const animateCounter = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 4);
+          const currentVal = Math.floor(eased * target);
+
+          el.textContent = `${currentVal.toLocaleString()}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = `${target.toLocaleString()}${suffix}`;
+          }
+        }
+        requestAnimationFrame(step);
+      };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+
+      counters.forEach(c => observer.observe(c));
+    }
+
+    /* ---------------------------------------------------------
+       MODULE 7: CALCULATOR, QUICK VIEW & SHORTLIST CART LOGIC
+       --------------------------------------------------------- */
+    function calculatePackageCost() {
+      const bed = parseInt(document.getElementById('calcBed').value, 10) || 0;
+      const wardrobe = parseInt(document.getElementById('calcWardrobe').value, 10) || 0;
+      const dressing = parseInt(document.getElementById('calcDressing').value, 10) || 0;
+      const sofa = parseInt(document.getElementById('calcSofa').value, 10) || 0;
+      
+      const polishElements = document.getElementsByName('polish');
+      let polish = 0;
+      for (const el of polishElements) {
+        if (el.checked) {
+          polish = parseInt(el.value, 10) || 0;
+          break;
+        }
+      }
+
+      const total = bed + wardrobe + dressing + sofa + polish;
+      const estimatedRetail = Math.round(total * 1.38);
+      const savings = estimatedRetail - total;
+
+      document.getElementById('calcTotalDisplay').innerText = total.toLocaleString();
+      document.getElementById('calcRetailDisplay').innerText = `Rs. ${estimatedRetail.toLocaleString()}`;
+      document.getElementById('calcSavingsDisplay').innerText = savings.toLocaleString();
+    }
+
+    function sendCalculatorToWhatsApp() {
+      const bedText = document.getElementById('calcBed').options[document.getElementById('calcBed').selectedIndex].text;
+      const wardrobeText = document.getElementById('calcWardrobe').options[document.getElementById('calcWardrobe').selectedIndex].text;
+      const dressingText = document.getElementById('calcDressing').options[document.getElementById('calcDressing').selectedIndex].text;
+      const sofaText = document.getElementById('calcSofa').options[document.getElementById('calcSofa').selectedIndex].text;
+      const total = document.getElementById('calcTotalDisplay').innerText;
+
+      const message = `Assalam-o-Alaikum Furniture Wala! Maine aapki website calculator se estimate banaya hai:%0A%0A*Estimated Package Total: Rs. ${total}*%0A%0A• *Bed:* ${bedText}%0A• *Storage/Bookshelf:* ${wardrobeText}%0A• *Dining/Table:* ${dressingText}%0A• *Wall Shelves:* ${sofaText}%0A%0AKya yeh package currently is rate par finalize ho sakta hai aur workshop visit ka time batayein?`;
+      window.open(`https://wa.me/923040802848?text=${message}`, '_blank');
+    }
+
+    function sendSingleWhatsApp(code, title, price) {
+      const message = `Assalam-o-Alaikum Furniture Wala! Mujhe is design ki inquiry karni hai:%0A%0A*Design Code:* ${code}%0A*Product:* ${title}%0A*Factory Rate:* Rs. ${price.toLocaleString()}%0A%0AKya yeh piece available hai aur delivery time kitna hoga?`;
+      window.open(`https://wa.me/923040802848?text=${message}`, '_blank');
+    }
+
+    function openFinishWhatsApp(finishName) {
+      const message = `Assalam-o-Alaikum Furniture Wala! Mujhe apne furniture ke liye *${finishName}* finish select karni hai. Iske sample pictures aur rate difference share karein.`;
+      window.open(`https://wa.me/923040802848?text=${message}`, '_blank');
+    }
+
+    function addToShortlist(id) {
+      const item = products.find(p => p.id === id);
+      if (!item) return;
+
+      if (!shortlist.some(s => s.id === id)) {
+        shortlist.push(item);
+      }
+      updateShortlistUI();
+      toggleShortlistModal(true);
+    }
+
+    function removeFromShortlist(id) {
+      shortlist = shortlist.filter(s => s.id !== id);
+      updateShortlistUI();
+    }
+
+    function clearShortlist() {
+      shortlist = [];
+      updateShortlistUI();
+    }
+
+    function updateShortlistUI() {
+      const countBadge = document.getElementById('shortlistBadgeCount');
+      const container = document.getElementById('shortlistItemsContainer');
+      const emptyMsg = document.getElementById('emptyShortlistMsg');
+      const totalDisplay = document.getElementById('shortlistTotalDisplay');
+
+      countBadge.innerText = shortlist.length;
+
+      if (shortlist.length === 0) {
+        container.innerHTML = '';
+        container.appendChild(emptyMsg);
+        emptyMsg.classList.remove('hidden');
+        totalDisplay.innerText = '0';
+        return;
+      }
+
+      emptyMsg.classList.add('hidden');
+      container.innerHTML = '';
+
+      let total = 0;
+      shortlist.forEach(item => {
+        total += item.price;
+        const row = document.createElement('div');
+        row.className = "flex items-center justify-between p-3 bg-charcoalDeep border border-brandBorder rounded-xl";
+        row.innerHTML = `
+          <div class="flex items-center space-x-3">
+            <img src="${item.image}" class="w-12 h-12 object-cover rounded-lg border border-brandGold/30">
+            <div>
+              <span class="text-[9px] font-bold text-brandGold block">${item.code}</span>
+              <h5 class="font-bold text-xs text-white line-clamp-1">${item.title}</h5>
+              <span class="text-xs font-extrabold text-brandGoldLight">Rs. ${item.price.toLocaleString()}</span>
+            </div>
+          </div>
+          <button onclick="removeFromShortlist(${item.id})" class="text-brandMuted hover:text-rose-400 p-1.5 text-sm transition">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        `;
+        container.appendChild(row);
+      });
+
+      totalDisplay.innerText = total.toLocaleString();
+    }
+
+    function toggleShortlistModal(show) {
+      const drawer = document.getElementById('shortlistDrawer');
+      const backdrop = document.getElementById('drawerBackdrop');
+      if (show) {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    function sendConsolidatedShortlistToWhatsApp() {
+      if (shortlist.length === 0) {
+        alert('Please add at least one furniture design to your shortlist.');
+        return;
+      }
+
+      let itemsText = '';
+      let total = 0;
+      shortlist.forEach((item, index) => {
+        total += item.price;
+        itemsText += `${index + 1}. *[${item.code}]* ${item.title} - Rs. ${item.price.toLocaleString()}%0A`;
+      });
+
+      const message = `Assalam-o-Alaikum Furniture Wala! Maine website se complete quotation list finalize ki hai:%0A%0A${itemsText}%0A*Total Factory Quotation:* Rs. ${total.toLocaleString()}%0A%0AKya in tamam designs ka bulk discount aur delivery date confirm kar sakte hain?`;
+      window.open(`https://wa.me/923040802848?text=${message}`, '_blank');
+    }
+
+    function openQuickView(id) {
+      const p = products.find(x => x.id === id);
+      if (!p) return;
+
+      document.getElementById('modalImg').src = p.image;
+      document.getElementById('modalCode').innerText = `CODE: ${p.code}`;
+      document.getElementById('modalCat').innerText = p.categoryName;
+      document.getElementById('modalTitle').innerText = p.title;
+      document.getElementById('modalPrice').innerText = `Rs. ${p.price.toLocaleString()}`;
+      document.getElementById('modalDesc').innerText = p.description;
+      document.getElementById('modalWood').innerText = p.wood;
+      document.getElementById('modalPolish').innerText = p.polish;
+
+      document.getElementById('modalWhatsAppBtn').onclick = function() {
+        sendSingleWhatsApp(p.code, p.title, p.price);
+      };
+
+      document.getElementById('modalAddShortlistBtn').onclick = function() {
+        addToShortlist(p.id);
+        closeQuickView();
+      };
+
+      document.getElementById('quickViewModal').classList.remove('hidden');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.add('hidden');
+    }
+
+    /* ---------------------------------------------------------
+       INITIALIZE ALL MODULES ON DOM READY
+       --------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      initSplitTextHeadings();
+      initPreloader();
+      initMagneticLuxuryCursor();
+      initScrollAndParallax();
+      initCatalogDOM();
+      calculatePackageCost();
+      initScrollCounters();
+    });
+  </script>
+</body>
+</html>
