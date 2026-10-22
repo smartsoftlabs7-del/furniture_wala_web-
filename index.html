@@ -584,8 +584,13 @@
         </button>
       </div>
 
-      <!-- Quick Actions (Shortlist / Cart Drawer Button + Direct WhatsApp Desk) -->
+      <!-- Quick Actions (Masonry Gallery + Shortlist / Cart Drawer Button + Direct WhatsApp Desk) -->
       <div class="order-2 sm:order-3 flex items-center space-x-2.5">
+        <a href="masonry-catalog.html" data-magnetic class="bg-charcoalCard border border-brandGold/40 hover:border-brandGold text-brandGoldLight hover:text-white px-3.5 py-2.5 rounded-xl text-xs font-bold flex items-center transition gold-border-glow">
+          <i class="fa-solid fa-table-cells-large text-brandGold mr-2 text-xs"></i>
+          <span>Masonry Gallery</span>
+        </a>
+
         <button onclick="toggleShortlistModal(true)" data-magnetic class="relative bg-charcoalCard border border-brandGold/30 hover:border-brandGold text-stone-100 px-4 py-2.5 rounded-xl text-xs font-semibold flex items-center transition gold-border-glow">
           <i class="fa-solid fa-bag-shopping text-brandGold mr-2 text-sm"></i>
           <span>Shortlist & Cart</span>
@@ -782,7 +787,12 @@
     <!-- Header with Responsive Flex-Wrap Category Tabs -->
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
       <div>
-        <span class="text-xs font-bold text-brandGold uppercase tracking-[0.2em]">Live Interactive Showroom</span>
+        <div class="flex flex-wrap items-center gap-2.5">
+          <span class="text-xs font-bold text-brandGold uppercase tracking-[0.2em]">Live Interactive Showroom</span>
+          <a href="masonry-catalog.html" class="inline-flex items-center gap-1.5 text-[11px] font-bold bg-brandGold/15 hover:bg-brandGold/25 text-brandGoldLight border border-brandGold/40 px-3 py-1 rounded-full transition">
+            <i class="fa-brands fa-pinterest-p text-brandGold"></i> Open Pinterest Masonry Gallery
+          </a>
+        </div>
         <h2 class="text-2xl sm:text-4xl font-heading font-extrabold text-white mt-1">
           Direct Factory <span class="gold-text-gradient">Product Catalog</span>
         </h2>
